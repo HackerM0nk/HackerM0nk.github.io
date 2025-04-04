@@ -1,49 +1,78 @@
 ---
-permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
+title: "About Me"
+permalink: /about/
+layout: single
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+# About Me
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+I am a Security Software Engineer and Architect specializing in:
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+- Cloud Security
+- Infrastructure as Code (IaC)
+- Threat Modeling
+- eBPF-based Security Tools
+- Product Security
+- Container Security
+- CI/CD
+- Observability
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+## Experience
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+### Sprinklr | Product Security Engineer (May 2023 – Present)
 
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+I am currently working as a **Product Security Engineer** at Sprinklr, focusing on **Security Architecture Reviews, Infrastructure Security, and Automation** across major products like **Sprinklr Insights, Sprinklr Community, and Sprinklr Service**.
 
-**Markdown generator**
+- **Security Architecture Review:**  
+  - Conducted comprehensive security architecture reviews for Sprinklr's flagship products, ensuring adherence to best practices and organizational security policies.  
+  - Collaborated with engineering teams to identify and mitigate architectural vulnerabilities across various components and services.  
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
+- **Bring Your Own Key (BYOK) Initiative:**  
+  - Designed and developed an in-house **BYOK (Bring Your Own Key) framework** from scratch.  
+  - Integrated BYOK with Sprinklr's existing infrastructure to provide customers with enhanced control over their encryption keys, boosting data security and compliance.  
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+- **Cloud Infrastructure Security & Automation:**  
+  - Implemented automation pipelines using **Ansible, Terraform, and Kubernetes** to streamline deployment processes and enforce security controls.  
+  - Created IaC templates and CI/CD pipelines for ensuring infrastructure compliance and automated security analysis across environments.  
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
+- **CNAPP Vendor Evaluation & Onboarding:**  
+  - Led CNAPP (Cloud-Native Application Protection Platform) vendor evaluation and onboarding projects to enhance cloud security visibility and risk management.  
+  - Evaluated solutions across various domains including network security, workload protection, and cloud security posture management (CSPM).  
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+- **Cloud Infra Security:**  
+  - Hardened cloud infrastructure security through identity management, role-based access control (RBAC), network segmentation, and logging improvements.  
+  - Designed and enforced security policies across various Kubernetes clusters and cloud accounts.  
+
+
+### Urban Company | Core Platform & Product Security (Jan 2022 – Dec 2023)
+
+I worked as the **only dedicated Product Security Engineer** in the Core Platform & Product Security team at Urban Company, spearheading various projects centered around **cloud infrastructure security, Kubernetes, Terraform automation, and cryptographic data protection**.
+
+- **Managing Infrastructure Migration Projects:**  
+  - Architected and executed the migration of critical infrastructure components from legacy systems to modern Kubernetes (EKS) clusters using Terraform.  
+  - Migrated tools like ArgoCD, Jenkins, Kafka, Prometheus, and ELK observability stack to the newly formed cloud-native infrastructure.  
+  - Designed Infrastructure Security playbooks adhering to the 7C’s principle, strengthening cloud security across multiple repositories.  
+
+- **Crypto Shredding Project:**  
+  - Designed and implemented a **unique encryption key per PII data per user project**, ensuring maximum data privacy and isolation.  
+  - Built APIs for **PII encryption and decryption** using custom modules in the Securitas library.  
+  - Embedded PII Data Masking features within logging pipelines across 150+ microservices, improving data protection and compliance.  
+
+- **Cloud Security & Automation:**  
+  - Transitioned legacy ECS infrastructure to a more secure and scalable Kubernetes-based architecture.  
+  - Implemented automation pipelines using Terraform and CI/CD tools (Jenkins, Gitlab) to enhance developer productivity and enforce security policies.  
+  - Managed bug bounty programs through platforms like **HackerOne and PingSafe**, effectively handling vulnerabilities such as dependency confusion, IDOR, and CSRF.  
+
+- **eBPF-based Security Tools:**  
+  - Designed and implemented PoC setups of eBPF-based networking & security tools for enhanced observability and runtime security.  
+  - Deployed Cilium as a service mesh, and Falco & Tetragon for container runtime security and SIEM of containerized workloads.  
+
+
+
+### FireCompass | Research Intern (Jul 2021 – Dec 2021)
+- Conducted VAPT campaigns and contributed to in-house CART Framework.
+
+### C3iHub, IIT Kanpur | Summer Research Intern (May 2021 – Jul 2021)
+- Developed an automated reconnaissance framework using open-source penetration testing tools.
+
+---
