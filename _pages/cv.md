@@ -1,64 +1,56 @@
 ---
-layout: archive
-title: "CV"
-permalink: /cv/
-author_profile: true
-redirect_from:
-  - /resume
+layout: cv
+title: Shivam Vaishampayan - CV
 ---
 
-{% include base_path %}
+# Shivam Vaishampayan  
+- **Email:** shivamvviiita@gmail.com  
+- **LinkedIn:** [linkedin.com/in/shivamvv](https://linkedin.com/in/shivamvv)  
+- **GitHub:** [HackerM0nk](https://github.com/HackerM0nk)  
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+## Education  
+### Indian Institute of Information Technology, Allahabad  
+**Bachelor of Technology in Electronics and Communication Engineering**  
+Aug 2018 – May 2022  
+CGPA: 8.34/10  
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+## Technical Skills  
+- **Programming Languages:** C++, Python, Bash  
+- **Cloud Platforms & Tools:** AWS, Terraform, Kubernetes, Docker, Jenkins, Gitlab, Sourcegraph, Emissary Ingress, Paralus  
+- **Security Tools:** HashiCorp Vault, SonarQube, Renovate, Falco, Tetragon, HackerOne, PingSafe  
+- **Concepts:** Security Architecture, Threat Modeling, Vulnerability Management, Hardcoded Secrets Detection, eBPF-based Security, Infrastructure as Code (IaC)  
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+## Work Experience  
+### Sprinklr | Product Security Engineer  
+May 2023 – Present  
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+- Conducted comprehensive **Security Architecture Reviews** for major products like **Sprinklr Insights, Sprinklr Community, and Sprinklr Service**.  
+- Designed and implemented an in-house **Bring Your Own Key (BYOK) initiative** from scratch.  
+- Led **CNAPP (Cloud-Native Application Protection Platform) vendor evaluation and onboarding projects**.  
+- Built automation pipelines using **Ansible, Terraform, and Kubernetes** for deployment processes and security controls.  
+- Implemented infrastructure security through RBAC, network segmentation, logging, and compliance policies.  
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+### Urban Company | Core Platform & Product Security (SDE I)  
+Jan 2022 – May 2023  
+
+- Developed Terraform modules for AWS VPC components and EKS clusters, migrating tools like ArgoCD, Jenkins, Kafka, Prometheus, and ELK.  
+- Implemented a **unique encryption key per PII data per user project (Crypto Shredding)**.  
+- Automated dependency updates and integrated security pipelines using SonarQube for 180+ repositories.  
+- Managed bug bounty programs through **HackerOne and PingSafe**, addressing issues such as dependency confusion, IDOR, and CSRF.  
+- Designed PoC setups of eBPF-based networking & security tools for observability and runtime security.  
+
+## Certificates  
+- **OSCP** | Offensive Security Certified Professional (2021)  
+- **CRTE** | Certified Red Team Expert (2020)  
+
+## Achievements  
+- Selected among Top 5 projects from India for **CSAW ESC’20 World Finals** cohosted by NYU and IITK.  
+- Global Rank - 99 in **7th Flare-On Challenge** (FireEye).  
+- Achieved 2nd Rank Nationally in the qualification round of **CSAW CTF 2020**.  
+- Secured 2nd Rank at **Cyber Hack CTF** organized by National Forensic Sciences University.  
+- Best Hardware Hack prize at **HackOut**, a hackathon by Headout in collaboration with GeekHaven, IIITA.  
+
+## Leadership  
+- **Lead Organizer** - Hack In The North, IIIT-A (Aug 2020 – Aug 2021)  
+
+---
