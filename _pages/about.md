@@ -17,13 +17,13 @@ I’m a **Software Engineer** and **Security Architect**.
 
 - I favor bounded contexts with validated inputs, explicit trust boundaries, least-privilege, deny-by-default access, encrypted data paths, and runtime policy enforcement — so protection is continuous and failure stays local.
 
----
+<!-- ---
 
 ## How I think
 - **Purpose before parts** (Telos) Name the objective; choose mechanisms that serve it. 
 - **Evidence-driven iteration** Define intent; measure what matters; adapt on evidence.  
 - **Resilience → Antifragility** Make failure safe and recovery routine; let stress refine the defaults.  
-- **Stewardship** Leave systems simpler, safer, clearer than you found them.
+- **Stewardship** Leave systems simpler, safer, clearer than you found them. -->
 
 ---
 
@@ -51,6 +51,7 @@ Pacing and recovery matter in bodies and in systems; both reward consistency ove
 - Alignment in practice means clear objectives and corrigible behavior — systems that update on evidence, accept oversight, and fail safely when the world surprises us.  
 
 ---
+
 
 ### **Craft over Hype!**
 ---
