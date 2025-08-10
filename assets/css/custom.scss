@@ -1,0 +1,16 @@
+/* assets/css/custom.scss */
+.skills-grid { /* …paste the .skills-grid block from above… */ }
+.skills-grid div { /* … */ }
+.skills-grid div::before { /* … */ }
+
+.kicker { /* … */ }
+
+.cta-row { /* … */ }
+.cta-row .btn { /* … */ }
+.cta-row .btn:hover { /* … */ }
+.btn--light-outline { /* … */ }
+.btn--light-outline:hover { /* … */ }
+
+/* Optional hero tweaks */
+.page__hero--overlay .page__title { font-weight: 800; letter-spacing: 0.2px; }
+.page__hero--overlay .page__lead { max-width: 900px; margin: 0 auto; opacity: 0.95; }
