@@ -25,8 +25,8 @@ author:
   avatar           : "profile.png"
   name             : "Shivam Vaishampayan"
   pronouns         : "he/him"  
-  bio              : "I am a Software Security Engineer and Architect with experience in product security at Sprinklr and system engineering at Enhanced Software Solutions Pvt. Ltd. My expertise includes Cloud Security, Infrastructure as Code, Threat Modeling, eBPF-based Security Tools, Product Security, Container Security, CI/CD, and Observability."
-  location         : "Earth"
+  bio              : "I am a Software & Security Engineer and Architect with experience in product security at Sprinklr and system engineering at Enhanced Software Solutions Pvt. Ltd. My expertise includes Cloud Security, Infrastructure as Code, Threat Modeling, eBPF-based Security Tools, Product Security, Container Security, CI/CD, and Observability."
+  location         : "Mumbai, India"
   employer         : "Sprinklr"
   uri              : # URL
   email            : "shivamvviiita@gmail.com" 
@@ -242,7 +242,7 @@ defaults:
       related: true
   # _pages
   - scope:
-      path: "_pages"
+      path: ""
       type: pages
     values:
       layout: single
