@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "Engineering Secure Platforms — From Code to Cloud"
+title: "Engineering Secure Platforms — From Code to Compliance"
 permalink: /
 header:
   overlay_color: "#0b132b"
