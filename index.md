@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "Engineering Secure Platforms — From Code to Compliance"
+title: "Engineering Secure Platforms: From Code to Compliance"
 permalink: /
 header:
   overlay_color: "#0b132b"
@@ -14,7 +14,7 @@ excerpt: >
 
 <div class="skills-cards" aria-label="Technical skills">
   <div class="skill-card">Platform Engineering</div>
-  <div class="skill-card">Securing LLM Ecosystems</div>
+  <div class="skill-card">ML / LLM Security </div>
   <div class="skill-card">Cloud-Native Security</div>
   <div class="skill-card">Kubernetes & Containers</div>
   <div class="skill-card">Microservice Architecture</div>
@@ -22,8 +22,8 @@ excerpt: >
   <div class="skill-card">Distributed Systems</div>
   <div class="skill-card">Detection & Response</div>
   <div class="skill-card">Data Privacy</div>
-  <div class="skill-card">API Security</div>
-  <div class="skill-card">Cryptography & BYOK</div>
+  <div class="skill-card">Web & API Security</div>
+  <div class="skill-card">Cryptography & Data Encryption</div>
   <div class="skill-card">Data Governance</div>
   <div class="skill-card">Threat Modeling</div>
   <div class="skill-card">Penetration Testing</div>
