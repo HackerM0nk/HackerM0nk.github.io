@@ -22,11 +22,11 @@ main:
   - title: "Portfolio"
     url: /portfolio/
         
-  - title: "Blog Posts"
+  - title: "Blog"
     url: /year-archive/
     
   - title: "Books"
     url: /markdown/
 
-  - title: "CV"
+  - title: "Resume"
     url: /cv/

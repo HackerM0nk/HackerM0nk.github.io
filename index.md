@@ -8,7 +8,7 @@ header:
   overlay_image: "{{ '/images/R.jpeg' | relative_url }}"
 
 excerpt: >
-  Software Security Engineer & Architect — Cloud-Native, DevSecOps, eBPF, BYOK, LLM Security, CNAPP.
+  Building secure-by-default SDLCs across distributed, cloud-native systems.
 ---
 
 <!-- Welcome! Check out my [About Me](/_pages/about.md), [Projects](/projects/), and [Blog](/blog/). -->
