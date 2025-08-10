@@ -13,7 +13,7 @@ My range runs from **C/C++ and systems internals** to **distributed cloud platfo
 I design for **graceful change**: secure by default, legible to the next reader, and stable where it matters.  
 
 Security isn’t a bolt-on; it’s a **property that emerges from sound design**.  
-I favor **precise contracts and clear seams**, least-privilege by habit, encrypted data paths, strong invariants, bounded blast radius, and **runtime enforcement** where the work actually happens—so data stays guarded and failure stays local.  
+I favor bounded contexts with validated inputs, explicit trust boundaries, least-privilege, deny-by-default access, encrypted data paths, and runtime policy enforcement—so protection is continuous and failure is local.
 
 ---
 
