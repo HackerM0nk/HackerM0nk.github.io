@@ -1,17 +1,18 @@
 ---
-title: "Curriculum Vitae"
+title: "Resume"
 layout: single
 permalink: /cv/
 author_profile: true
 ---
 
-# Shivam Vaishampayan
+<!-- # Shivam Vaishampayan -->
 
 <!-- **Phone:** +91-8554907741   -->
 **Email:** [shivamvviiita@gmail.com](mailto:shivamvviiita@gmail.com)  
 **LinkedIn:** [linkedin.com/in/shivamvv](https://linkedin.com/in/shivamvv)  
 <!-- **GitHub:** [github.com/HackerM0nk](https://github.com/HackerM0nk)   -->
-**Resume PDF:** 
+**Resume:** [PDF](https://github.com/HackerM0nk/HackerM0nk.github.io/blob/master/Shivam%27s%20Resume.pdf)
+
 
 ---
 
@@ -24,12 +25,16 @@ Aug 2018 – May 2022
 
 ---
 
-## Technical Skills
+## Technical Skills  
 
-**Key Areas:** Platform Engineering | Distributed Systems | Cloud Native Security | Threat Modeling | Compliance  
+**Key Areas:**  
+Platform Engineering · Distributed Systems · Cloud-Native Security · Threat Modeling · Compliance  
 
-**Languages:** C, C++, Python, Golang, Java, JavaScript (Node.js), Typescript, Bash, SQL, Git  
-**Infrastructure:** Terraform, Helm, Docker, Kubernetes, Linux, Mongo, Postgres, Redis, Kafka, ELK Stack  
+**Languages:**  
+C · C++ · Python · Go · Java · JavaScript (Node.js) · TypeScript · Bash · SQL · Git  
+
+**Infrastructure & Tools:**  
+Terraform · Helm · Docker · Kubernetes · Linux · MongoDB · PostgreSQL · Redis · Kafka · ELK Stack  
 
 ---
 
