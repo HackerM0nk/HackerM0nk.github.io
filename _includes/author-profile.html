@@ -17,7 +17,12 @@
   <div class="author__content">
     <h3 class="author__name">{{ author.name }}</h3>
     {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    {% if author.bio %}{% if page.url == "/" %}
+  <p class="author__bio">I am a Software & Security Engineer and Architect with experience in product security at Sprinklr and system engineering at Enhanced Software Solutions Pvt. Ltd. My expertise includes Cloud Security, Infrastructure as Code, Threat Modeling, eBPF-based Security Tools, Product Security, Container Security, CI/CD, and Observability.</p>
+{% else %}
+  <p class="author__bio">Software Engineer | Security Architect</p>
+{% endif %}
+{% endif %}
   </div>
 
   <div class="author__urls-wrapper">

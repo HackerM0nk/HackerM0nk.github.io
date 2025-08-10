@@ -12,8 +12,9 @@ site_theme               : "default"
 title                    : "Shivam Vaishampayan"
 title_separator          : "-"
 name                     : &name "Shivam Vaishampayan"
-description              : &description "Software Security Engineer specializing in Product Security and Platform Engineering."
-url                      : "https://HackerM0nk.github.io" # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
+description              : &description "Software Security Engineer specializing in Product Security and Platform Engineering"
+# description: &description "Software Security Engineer specializing in Product Security and Platform Engineering"
+url                      : "https://HackerM0nk.github.io" # ""the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "HackerM0nk/HackerM0nk.github.io"
 
@@ -22,10 +23,11 @@ repository               : "HackerM0nk/HackerM0nk.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "R.jpeg"
   name             : "Shivam Vaishampayan"
   pronouns         : "he/him"  
-  bio              : "I am a Software & Security Engineer and Architect with experience in product security at Sprinklr and system engineering at Enhanced Software Solutions Pvt. Ltd. My expertise includes Cloud Security, Infrastructure as Code, Threat Modeling, eBPF-based Security Tools, Product Security, Container Security, CI/CD, and Observability."
+  # bio              : "I am a Software & Security Engineer and Architect with experience in product security at Sprinklr and system engineering at Enhanced Software Solutions Pvt. Ltd. My expertise includes Cloud Security, Infrastructure as Code, Threat Modeling, eBPF-based Security Tools, Product Security, Container Security, CI/CD, and Observability."
+  bio: "Software & Security Engineer"
   location         : "Mumbai, India"
   employer         : "Sprinklr"
   uri              : # URL
@@ -154,9 +156,9 @@ analytics:
 
 # Reading Files
 include:
-  - .htaccess
+  # - .htaccess
   - _pages
-  - files
+  # - files
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
