@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "About Me"
 layout: single
 permalink: /about/
 redirect_from:
@@ -7,34 +7,63 @@ redirect_from:
 author_profile: true
 ---
 
-I’m a **Software Security Engineer & Architect** specializing in building and securing large-scale, cloud-native systems.  
-My focus areas include **product security, infrastructure-as-code, DevSecOps, runtime protection, and threat modeling**.  
-I work on making platforms **secure-by-default**, using tools like **Terraform, Helm, Kubernetes**, and advanced security controls such as **BYOK encryption, LLM guardrails, CNAPP, and eBPF-based runtime detection**.
+I’m a **Software Engineer & Security Architect** who treats engineering as both a science and a craft.  
+Much of my learning is self-directed—rooted in curiosity, first-principles reasoning, and a bias for action.  
+My range runs from **C/C++ and systems internals** to **distributed cloud platforms** shaped by clear purpose and careful edges.  
+I design for **graceful change**: secure by default, legible to the next reader, and stable where it matters.  
+
+Security isn’t a bolt-on; it’s a **property that emerges from sound design**.  
+I favor bounded contexts with validated inputs, explicit trust boundaries, least-privilege, deny-by-default access, encrypted data paths, and runtime policy enforcement—so protection is continuous and failure is local.
 
 ---
 
-## 🔹 Core Expertise
-- **Cloud Native Security** – AWS, Azure, GCP, Kubernetes (EKS/AKS/GKE) hardening, CSPM, CNAPP integration.  
-- **DevSecOps & IaC Security** – Secure CI/CD pipelines, SAST/SCA/Secrets scanning, IaC security policies.  
-- **Threat Modeling & Architecture Review** – Designing secure microservice and distributed system architectures.  
-- **Runtime Security & Observability** – eBPF (Cilium, Tetragon, Falco), container runtime protection, SIEM integration.  
+## How I think
+- **Purpose before parts.** Aristotle called it *telos*: build toward a clear end. In practice—name the objective, then choose the mechanism.  
+- **First principles over fashion.** Reduce to essentials, state assumptions, prove the edges, and keep interfaces honest.  
+- **Cause, signal, feedback.** Think in incentives and constraints; update beliefs when the evidence moves.  
+- **Resilience → antifragility.** Design for safe failure and fast recovery; let stress refine the system rather than fracture it.  
+- **Stewardship.** Leave things simpler, safer, and clearer than you found them.
 
 ---
 
-## 🔹 Technical Stack
-**Languages:** C, C++, Python, Go, Java, JavaScript/TypeScript, Bash, SQL  
-**Infra & Tools:** Terraform, Helm, Docker, Kubernetes, Linux, MongoDB, PostgreSQL, Redis, Kafka, ELK, Prometheus, ArgoCD  
-**Security:** eBPF, CNAPP, BYOK, Vault, WAF, API Security, LLM Security Guardrails  
+## What I work on
+- **Platform & Cloud Security** — trust boundaries, identity and network segmentation, encryption by default, policy-as-code, and telemetry that tells the truth.  
+- **Secure-by-Design SDLC** — threat models tied to requirements, IaC baselines, secrets/SAST/SCA/IaC gates, golden images, patch pipelines, and boring rollbacks.  
+- **Runtime Defense & Observability** — least privilege, provenance, syscall-level signals; incident response that favors containment over heroics.  
+- **Systems that age well** — code and platforms that are easy to reason about, safe to change, and aligned with intent.  
+- **Data protection & privacy** — minimized collection, scoped access, auditable flows, and deletion that actually deletes.
 
 ---
 
-## 🔹 Experience Highlights
-- **Sprinklr** – Led **BYOK encryption framework** design and deployment, CNAPP vendor evaluation, cloud infra security automation.  
-- **Urban Company** – Migrated critical workloads to Kubernetes (EKS), implemented **crypto-shredding** for PII, deployed eBPF security tools.  
-- **FireCompass** – Conducted large-scale VAPT campaigns, contributed to CART offensive security tooling.  
-- **C3iHub (IIT Kanpur)** – Built automated reconnaissance framework for penetration testing.
+## Beyond Work
+I’m a **bibliophile** drawn to classic literature, ancient wisdom and Greko-Indian thought, mathematics, psychology, and systems thinking.  
+Thucydides, Dostoevsky sit beside CLRS, SICP, and Taleb—reminders that patterns repeat and feedback loops decide  endures.  
+
+Sport keeps me disciplined: football, gym training, swimming, and long rides.  
+Pacing and recovery matter in bodies and in systems; both reward consistency over theatrics.
+
+<!-- ---
+
+## Core principles
+**Ownership.** If it touches the user, it’s mine.  
+**First principles.** Start from what must be true; earn the rest.  
+**Bias for action.** Small steps, fast feedback, reversible by design.  
+**Simplicity.** Reduce surfaces; clarify intent; name the invariants.  
+**Antifragility.** Let stress inform the design and improve the defaults.  
+**Stewardship.** Build with care; leave the system better than you found it. -->
 
 ---
 
-💼 **GitHub:** [github.com/hackerm0nk](https://github.com/hackerm0nk)  
-🔗 **LinkedIn:** [linkedin.com/in/shivam-vaishampayan](https://linkedin.com/in/shivam-vaishampayan)
+## Toward Agentic Systems
+Soon we'll be building **Emergent Actors**, not oracles. With agency comes duty: make intent legible, bound impact, and keep causation based feedback in loop.  
+Alignment in practice means **clear objectives, calibrated incentives, and corrigible behavior**—systems that update based on secure inference, accept oversight, and **fail safely** when the world surprises us.  
+That’s the bridge between research ideals and production reality: **alignment you can deploy**.
+
+---
+- Craft over Hype
+
+---
+- Fundamentals over Shortcuts
+
+---
+- Steady in cause, Antifragile in Effect
