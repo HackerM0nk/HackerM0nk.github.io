@@ -1,6 +1,14 @@
----
+<!-- ---
 layout: cv
-title: Shivam Vaishampayan - CV
+title: Shivam Vaishampayan - CV -->
+
+---
+title: "CV"
+layout: single
+permalink: /cv/
+author_profile: true
+---
+
 ---
 
 # Shivam Vaishampayan  

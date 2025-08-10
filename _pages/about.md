@@ -1,78 +1,40 @@
 ---
-title: "About Me"
-permalink: /about/
+title: "About"
 layout: single
+permalink: /about/
+redirect_from:
+  - /_pages/about.md
+author_profile: true
 ---
 
-# About Me
-
-I am a Security Software Engineer and Architect specializing in:
-
-- Cloud Security
-- Infrastructure as Code (IaC)
-- Threat Modeling
-- eBPF-based Security Tools
-- Product Security
-- Container Security
-- CI/CD
-- Observability
-
-## Experience
-
-### Sprinklr | Product Security Engineer (May 2023 – Present)
-
-I am currently working as a **Product Security Engineer** at Sprinklr, focusing on **Security Architecture Reviews, Infrastructure Security, and Automation** across major products like **Sprinklr Insights, Sprinklr Community, and Sprinklr Service**.
-
-- **Security Architecture Review:**  
-  - Conducted comprehensive security architecture reviews for Sprinklr's flagship products, ensuring adherence to best practices and organizational security policies.  
-  - Collaborated with engineering teams to identify and mitigate architectural vulnerabilities across various components and services.  
-
-- **Bring Your Own Key (BYOK) Initiative:**  
-  - Designed and developed an in-house **BYOK (Bring Your Own Key) framework** from scratch.  
-  - Integrated BYOK with Sprinklr's existing infrastructure to provide customers with enhanced control over their encryption keys, boosting data security and compliance.  
-
-- **Cloud Infrastructure Security & Automation:**  
-  - Implemented automation pipelines using **Ansible, Terraform, and Kubernetes** to streamline deployment processes and enforce security controls.  
-  - Created IaC templates and CI/CD pipelines for ensuring infrastructure compliance and automated security analysis across environments.  
-
-- **CNAPP Vendor Evaluation & Onboarding:**  
-  - Led CNAPP (Cloud-Native Application Protection Platform) vendor evaluation and onboarding projects to enhance cloud security visibility and risk management.  
-  - Evaluated solutions across various domains including network security, workload protection, and cloud security posture management (CSPM).  
-
-- **Cloud Infra Security:**  
-  - Hardened cloud infrastructure security through identity management, role-based access control (RBAC), network segmentation, and logging improvements.  
-  - Designed and enforced security policies across various Kubernetes clusters and cloud accounts.  
-
-
-### Urban Company | Core Platform & Product Security (Jan 2022 – Dec 2023)
-
-I worked as the **only dedicated Product Security Engineer** in the Core Platform & Product Security team at Urban Company, spearheading various projects centered around **cloud infrastructure security, Kubernetes, Terraform automation, and cryptographic data protection**.
-
-- **Managing Infrastructure Migration Projects:**  
-  - Architected and executed the migration of critical infrastructure components from legacy systems to modern Kubernetes (EKS) clusters using Terraform.  
-  - Migrated tools like ArgoCD, Jenkins, Kafka, Prometheus, and ELK observability stack to the newly formed cloud-native infrastructure.  
-  - Designed Infrastructure Security playbooks adhering to the 7C’s principle, strengthening cloud security across multiple repositories.  
-
-- **Crypto Shredding Project:**  
-  - Designed and implemented a **unique encryption key per PII data per user project**, ensuring maximum data privacy and isolation.  
-  - Built APIs for **PII encryption and decryption** using custom modules in the Securitas library.  
-  - Embedded PII Data Masking features within logging pipelines across 150+ microservices, improving data protection and compliance.  
-
-- **Cloud Security & Automation:**  
-  - Transitioned legacy ECS infrastructure to a more secure and scalable Kubernetes-based architecture.  
-  - Implemented automation pipelines using Terraform and CI/CD tools (Jenkins, Gitlab) to enhance developer productivity and enforce security policies.  
-  - Managed bug bounty programs through platforms like **HackerOne and PingSafe**, effectively handling vulnerabilities such as dependency confusion, IDOR, and CSRF.  
-
-- **eBPF-based Security Tools:**  
-  - Designed and implemented PoC setups of eBPF-based networking & security tools for enhanced observability and runtime security.  
-  - Deployed Cilium as a service mesh, and Falco & Tetragon for container runtime security and SIEM of containerized workloads.  
-
-
-
-### FireCompass | Research Intern (Jul 2021 – Dec 2021)
-- Conducted VAPT campaigns and contributed to in-house CART Framework.
-
-### C3iHub, IIT Kanpur | Summer Research Intern (May 2021 – Jul 2021)
-- Developed an automated reconnaissance framework using open-source penetration testing tools.
+I’m a **Software Security Engineer & Architect** specializing in building and securing large-scale, cloud-native systems.  
+My focus areas include **product security, infrastructure-as-code, DevSecOps, runtime protection, and threat modeling**.  
+I work on making platforms **secure-by-default**, using tools like **Terraform, Helm, Kubernetes**, and advanced security controls such as **BYOK encryption, LLM guardrails, CNAPP, and eBPF-based runtime detection**.
 
 ---
+
+## 🔹 Core Expertise
+- **Cloud Native Security** – AWS, Azure, GCP, Kubernetes (EKS/AKS/GKE) hardening, CSPM, CNAPP integration.  
+- **DevSecOps & IaC Security** – Secure CI/CD pipelines, SAST/SCA/Secrets scanning, IaC security policies.  
+- **Threat Modeling & Architecture Review** – Designing secure microservice and distributed system architectures.  
+- **Runtime Security & Observability** – eBPF (Cilium, Tetragon, Falco), container runtime protection, SIEM integration.  
+
+---
+
+## 🔹 Technical Stack
+**Languages:** C, C++, Python, Go, Java, JavaScript/TypeScript, Bash, SQL  
+**Infra & Tools:** Terraform, Helm, Docker, Kubernetes, Linux, MongoDB, PostgreSQL, Redis, Kafka, ELK, Prometheus, ArgoCD  
+**Security:** eBPF, CNAPP, BYOK, Vault, WAF, API Security, LLM Security Guardrails  
+
+---
+
+## 🔹 Experience Highlights
+- **Sprinklr** – Led **BYOK encryption framework** design and deployment, CNAPP vendor evaluation, cloud infra security automation.  
+- **Urban Company** – Migrated critical workloads to Kubernetes (EKS), implemented **crypto-shredding** for PII, deployed eBPF security tools.  
+- **FireCompass** – Conducted large-scale VAPT campaigns, contributed to CART offensive security tooling.  
+- **C3iHub (IIT Kanpur)** – Built automated reconnaissance framework for penetration testing.
+
+---
+
+💼 **GitHub:** [github.com/hackerm0nk](https://github.com/hackerm0nk)  
+🔗 **LinkedIn:** [linkedin.com/in/shivam-vaishampayan](https://linkedin.com/in/shivam-vaishampayan)
