@@ -8,9 +8,12 @@ author_profile: true
 ---
 
 I’m a **Software Engineer & Security Architect** who treats engineering as both a science and a craft.  
+
+---
+
 Much of my learning is self-directed—rooted in curiosity, first-principles reasoning, and a bias for action.  
-My range runs from **C/C++ and systems internals** to **distributed cloud platforms** shaped by clear purpose and careful edges.  
-I design for **graceful change**: secure by default, legible to the next reader, and stable where it matters.  
+
+My range runs from **C/C++ and systems internals** to **distributed cloud platforms** shaped by clear purpose and careful constraints.  
 
 Security isn’t a bolt-on; it’s a **property that emerges from sound design**.  
 I favor bounded contexts with validated inputs, explicit trust boundaries, least-privilege, deny-by-default access, encrypted data paths, and runtime policy enforcement—so protection is continuous and failure is local.
