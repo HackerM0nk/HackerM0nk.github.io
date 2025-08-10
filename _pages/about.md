@@ -6,67 +6,54 @@ redirect_from:
   - /_pages/about.md
 author_profile: true
 ---
-
-I’m a **Software Engineer & Security Architect** who treats engineering as both a science and a craft.  
-
 ---
+I’m a **Software Engineer** and **Security Architect**.  
 
-Much of my learning is self-directed—rooted in curiosity, first-principles reasoning, and a bias for action.  
+- I treat engineering as **disciplined craft**—first principles, careful trade-offs, and evidence that dictates actions.
 
-My range runs from **C/C++ and systems internals** to **distributed cloud platforms** shaped by clear purpose and careful constraints.  
+- Much of my learning is self-directed—rooted in curiosity, first-principles reasoning, and a bias for action. My range runs from C/C++ and system internals to distributed cloud platforms shaped by clear purpose and careful constraints.
 
-Security isn’t a bolt-on; it’s a **property that emerges from sound design**.  
-I favor bounded contexts with validated inputs, explicit trust boundaries, least-privilege, deny-by-default access, encrypted data paths, and runtime policy enforcement—so protection is continuous and failure is local.
+- Security isn’t a bolt-on; it’s a **property that emerges from sound design**.  
+
+- I favor bounded contexts with validated inputs, explicit trust boundaries, least-privilege, deny-by-default access, encrypted data paths, and runtime policy enforcement — so protection is continuous and failure stays local.
 
 ---
 
 ## How I think
-- **Purpose before parts.** Aristotle called it *telos*: build toward a clear end. In practice—name the objective, then choose the mechanism.  
-- **First principles over fashion.** Reduce to essentials, state assumptions, prove the edges, and keep interfaces honest.  
-- **Cause, signal, feedback.** Think in incentives and constraints; update beliefs when the evidence moves.  
-- **Resilience → antifragility.** Design for safe failure and fast recovery; let stress refine the system rather than fracture it.  
-- **Stewardship.** Leave things simpler, safer, and clearer than you found them.
+- **Purpose before parts** (Telos) Name the objective; choose mechanisms that serve it. 
+- **Evidence-driven iteration** Define intent; measure what matters; adapt on evidence.  
+- **Resilience → Antifragility** Make failure safe and recovery routine; let stress refine the defaults.  
+- **Stewardship** Leave systems simpler, safer, clearer than you found them.
 
 ---
 
 ## What I work on
-- **Platform & Cloud Security** — trust boundaries, identity and network segmentation, encryption by default, policy-as-code, and telemetry that tells the truth.  
-- **Secure-by-Design SDLC** — threat models tied to requirements, IaC baselines, secrets/SAST/SCA/IaC gates, golden images, patch pipelines, and boring rollbacks.  
-- **Runtime Defense & Observability** — least privilege, provenance, syscall-level signals; incident response that favors containment over heroics.  
-- **Systems that age well** — code and platforms that are easy to reason about, safe to change, and aligned with intent.  
-- **Data protection & privacy** — minimized collection, scoped access, auditable flows, and deletion that actually deletes.
+- **Platform & Cloud Security** — trust boundaries, identity & network segmentation, encryption by default, policy-as-code, telemetry that tells the truth.  
+- **Secure-by-Design SDLC** — threat models tied to requirements, IaC baselines, gates for secrets/SAST/SCA/IaC, golden images, patch pipelines, boring rollbacks.  
+- **Runtime Observability** — least privilege, provenance, actionable signals; incident response that favors containment over heroics.  
+- **Data Protection, Privacy and Compliance** — minimized collection, scoped access, auditable flows, deletion that actually deletes.
 
 ---
 
 ## Beyond Work
-I’m a **bibliophile** drawn to classic literature, ancient wisdom and Greko-Indian thought, mathematics, psychology, and systems thinking.  
-Thucydides, Dostoevsky sit beside CLRS, SICP, and Taleb—reminders that patterns repeat and feedback loops decide  endures.  
+- I’m a **bibliophile** drawn to classic literature, ancient Greek and Indian thought, mathematics, psychology, and systems thinking. 
 
-Sport keeps me disciplined: football, gym training, swimming, and long rides.  
+- Thucydides and Dostoevsky sit beside CLRS, SICP and GEB — reminders that patterns repeat and feedback loops decide what endures.
+
+- Sport keeps me disciplined: football, gym training, long walks and rides.  
 Pacing and recovery matter in bodies and in systems; both reward consistency over theatrics.
-
-<!-- ---
-
-## Core principles
-**Ownership.** If it touches the user, it’s mine.  
-**First principles.** Start from what must be true; earn the rest.  
-**Bias for action.** Small steps, fast feedback, reversible by design.  
-**Simplicity.** Reduce surfaces; clarify intent; name the invariants.  
-**Antifragility.** Let stress inform the design and improve the defaults.  
-**Stewardship.** Build with care; leave the system better than you found it. -->
 
 ---
 
 ## Toward Agentic Systems
-Soon we'll be building **Emergent Actors**, not oracles. With agency comes duty: make intent legible, bound impact, and keep causation based feedback in loop.  
-Alignment in practice means **clear objectives, calibrated incentives, and corrigible behavior**—systems that update based on secure inference, accept oversight, and **fail safely** when the world surprises us.  
-That’s the bridge between research ideals and production reality: **alignment you can deploy**.
+- We’re building **Emergent Actors**, not oracles. With agency comes duty: make intent legible, bound impact, and keep causal feedback in the loop.  
+
+- Alignment in practice means clear objectives and corrigible behavior — systems that update on evidence, accept oversight, and fail safely when the world surprises us.  
 
 ---
-- Craft over Hype
 
+### **Craft over Hype!**
 ---
-- Fundamentals over Shortcuts
-
+### **Fundamentals over Shortcuts!**
 ---
-- Steady in cause, Antifragile in Effect
+### **Steady in Cause; Antifragile in Effect...**
