@@ -36,7 +36,7 @@ I’m a **Software Engineer** and **Security Architect**.
 ---
 
 ## Beyond Work
-- I’m a **bibliophile** drawn to Ancient History, Classic Literature, Mathematics, psychology, and systems thinking. 
+- I’m a **bibliophile** drawn to Ancient History, Classic Literature, Mathematics, Psychology, and Systems Thinking. 
 
 - Thucydides and Dostoevsky sit beside CLRS, SICP and GEB — reminders that patterns repeat and feedback loops decide what endures.
 
