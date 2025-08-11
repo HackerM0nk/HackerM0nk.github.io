@@ -7,14 +7,14 @@ header:
   overlay_filter: "0.55"
   overlay_image: "{{ '/images/R.jpeg' | relative_url }}"
 excerpt: >
-  Securing data, intelligence, and the fabric that connects them across modern platforms.
+  Securing Data, Intelligence, and the Fabric that connects them across Modern Platforms.
 ---
 
 <div class="kicker">Security across code, cloud, and cognition</div>
 
 <div class="skills-cards" aria-label="Technical skills">
   <div class="skill-card">Platform Engineering</div>
-  <div class="skill-card">ML / LLM Security </div>
+  <div class="skill-card">AI/ML/LLM Security </div>
   <div class="skill-card">Cloud-Native Security</div>
   <div class="skill-card">Kubernetes & Containers</div>
   <div class="skill-card">Microservice Architecture</div>
