@@ -33,7 +33,7 @@ excerpt: >
 <!-- <div class="cta-row">
   <a class="btn btn--primary" href="{{ '/about/' | relative_url }}">About</a>
   <a class="btn btn--light-outline" href="{{ '/portfolio/' | relative_url }}">Projects</a>
-  <a class="btn btn--light-outline" href="{{ '/year-archive/' | relative_url }}">Blog</a>
+  <a class="btn btn--light-outline" href="{{ '/blog/' | relative_url }}">Blog</a>
 </div> -->
 
 <style>
@@ -43,7 +43,7 @@ excerpt: >
   letter-spacing: 0.2px;
 }
 .page__hero--overlay .page__lead {
-  max-width: 980px;
+  max-width: 1500px;
   margin: 0 auto;
   opacity: 0.95;
 }
@@ -64,7 +64,7 @@ excerpt: >
   display: grid;
   grid-template-columns: repeat(3, minmax(190px, 1fr));
   gap: 0.9rem;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 1.1rem auto 1.2rem auto;
   padding: 0 0.25rem;
 }
@@ -129,13 +129,13 @@ excerpt: >
 }
 
 /* Responsive columns */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .skills-cards { grid-template-columns: repeat(3, minmax(190px, 1fr)); }
 }
-@media (max-width: 900px) {
+@media (max-width: 1400px) {
   .skills-cards { grid-template-columns: repeat(2, minmax(190px, 1fr)); }
 }
-@media (max-width: 560px) {
+@media (max-width: 1400px) {
   .skills-cards { grid-template-columns: 1fr; }
   .page__hero--overlay .page__title { font-size: 2rem; }
   .page__hero--overlay .page__lead { font-size: 1.05rem; }
