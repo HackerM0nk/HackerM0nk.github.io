@@ -36,11 +36,11 @@ I’m a **Software Engineer** and **Security Architect**.
 ---
 
 ## Beyond Work
-- I’m a **bibliophile** drawn to classic literature, ancient Greek and Indian thought, mathematics, psychology, and systems thinking. 
+- I’m a **bibliophile** drawn to Ancient History, Classic Literature, Mathematics, psychology, and systems thinking. 
 
 - Thucydides and Dostoevsky sit beside CLRS, SICP and GEB — reminders that patterns repeat and feedback loops decide what endures.
 
-- Sport keeps me disciplined: football, gym training, long walks and rides.  
+- Regular workouts keep me disciplined: football, gym training, long walks and rides.  
 Pacing and recovery matter in bodies and in systems; both reward consistency over theatrics.
 
 ---
