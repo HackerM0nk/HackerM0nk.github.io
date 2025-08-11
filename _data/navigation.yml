@@ -23,7 +23,7 @@ main:
     url: /portfolio/
         
   - title: "Blog"
-    url: /year-archive/
+    url: /blog/
     
   - title: "Books"
     url: /markdown/

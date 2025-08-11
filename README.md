@@ -34,7 +34,6 @@ _root/                 → Site root (config files, homepage)
 │
 ├── _config.yml         → Global site settings (title, description, menus, theme)
 ├── index.html          → Homepage layout
-│
 ├── _pages/             → Static pages (About, CV, Contact, etc.)
 ├── _posts/             → Blog posts (`YYYY-MM-DD-title.md`)
 ├── _projects/          → Portfolio & project entries

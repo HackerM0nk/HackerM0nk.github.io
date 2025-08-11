@@ -2,19 +2,36 @@
 
 <!-- start custom head snippets -->
 
-<!-- favicon from https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_academic-progressive.svg -->
+<!-- favicons -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png"/>
 <link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg"/>
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32"/>
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-192x192.png" sizes="192x192"/>
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
-<link rel="icon" href="/images/favicon.ico"/>
+<link rel="icon" href="{{ base_path }}/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff"/>
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
-
-<!-- Support for MatJax -->
+<!-- MathJax -->
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- Page-level tweaks -->
+{% if page.classes contains 'xl' %}
+<style>
+  /* widen content area only for pages that declare classes: ["wide","xl"] */
+  .page__inner { max-width: 1500px !important; }
+  .page__content,
+  .page__related,
+  .comments { max-width: 1200px !important; }
+
+  /* make figures/images breathe on wide pages */
+  .page__content .full img,
+  .page__content img { max-width: 100% !important; height: auto; }
+
+  /* slightly widen hero lead text too */
+  .page__hero--overlay .page__lead { max-width: 1400px !important; }
+</style>
+{% endif %}
 
 <!-- end custom head snippets -->

@@ -18,26 +18,12 @@ author_profile: true
 
 ## Education
 
-**Indian Institute of Information Technology, Allahabad**  
+**Indian Institute of Information Technology, Allahabad (IIITA)**  
 *B.Tech in Electronics and Communication Engineering*  
-Aug 2018 – May 2022  
-**CGPA:** 8.34 / 10  
+<!-- Aug 2018 – May 2022  
+**CGPA:** 8.34 / 10   -->
 
 ---
-
-## Technical Skills  
-
-**Key Areas:**  
-Platform Engineering · Distributed Systems · Cloud-Native Security · Threat Modeling · Compliance  
-
-**Languages:**  
-C · C++ · Python · Go · Java · JavaScript (Node.js) · TypeScript · Bash · SQL · Git  
-
-**Infrastructure & Tools:**  
-Terraform · Helm · Docker · Kubernetes · Linux · MongoDB · PostgreSQL · Redis · Kafka · ELK Stack  
-
----
-
 ## Work Experience
 
 ### Sprinklr — Product Security (CloudSec + SecArch)  
@@ -79,5 +65,28 @@ Terraform · Helm · Docker · Kubernetes · Linux · MongoDB · PostgreSQL · R
 - **OSCP** – Offensive Security Certified Professional (24-hour hands-on exam + PWK labs).  
 - **CRTE** – Certified Red Team Expert (48-hour exam covering advanced Active Directory attacks, Pentester Academy).  
 - **CSAW CTF & ESC** – 2nd Rank in India (CTF Qualifiers), Top 5 National Finalist (ESC). Qualified for CSAW World Finals in both, co-hosted by NYU Tandon & IIT Kanpur.
+
+---
+
+## Achievements
+
+- UC Champion Award at Urban Company for Exceptional Performance (Q3 2022).
+- Rookie Rockstar Award at Urban Company for Delivering Ahead of Timelines (Q1 2023).
+- Selected among Top 5 projects from India for CSAW ESC’20 World Finals (NYU and IITK).
+- Global Rank - 99 in 7th Flare-On Challenge (FireEye).
+- 2nd Rank Nationally in CSAW CTF 2020 hosted by NYU.
+- 2nd Rank at Cyber Hack CTF by National Forensic Sciences University (GFSU).
+- Best Hardware Hack prize at HackOut, a Hackathon by Headout in collaboration with GeekHaven, IIITA.
+
+## Technical Skills  
+
+**Key Areas:**  
+Platform Engineering · Distributed Systems · Cloud-Native Security · Threat Modeling · Compliance  
+
+**Languages:**  
+C · C++ · Python · Go · Java · JavaScript (Node.js) · TypeScript · Bash · SQL · Git  
+
+**Infrastructure & Tools:**  
+Terraform · Helm · Docker · Kubernetes · Linux · MongoDB · PostgreSQL · Redis · Kafka · ELK Stack  
 
 ---

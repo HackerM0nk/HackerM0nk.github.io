@@ -1,0 +1,25 @@
+/* /_sass/_custom.scss */
+
+/* widen single post pages (use with classes: ["wide","xl"]) */
+.layout--single .page__content { max-width: 1500px; }
+.layout--single .page__inner   { max-width: 1500px; }
+
+.xl .page__content   { max-width: 1500px; }
+.xl .page__inner     { max-width: 1500px; }
+.xl .page__related,
+.xl .comments        { max-width: 1200px; }
+
+/* hero tweaks */
+.page__hero--overlay .page__lead { max-width: 1500px; }
+
+/* your grid, buttons, etc. */
+.skills-grid { /* … */ }
+.skills-grid div { /* … */ }
+.skills-grid div::before { /* … */ }
+.kicker { /* … */ }
+.cta-row { /* … */ }
+.cta-row .btn { /* … */ }
+.cta-row .btn:hover { /* … */ }
+.btn--light-outline { /* … */ }
+.btn--light-outline:hover { /* … */ }
+.page__hero--overlay .page__title { font-weight: 800; letter-spacing: .2px; }

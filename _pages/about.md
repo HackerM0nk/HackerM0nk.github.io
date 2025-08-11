@@ -46,9 +46,9 @@ Pacing and recovery matter in bodies and in systems; both reward consistency ove
 ---
 
 ## Toward Agentic Systems
-- We’re building **Emergent Actors**, not oracles. With agency comes duty: make intent legible, bound impact, and keep causal feedback in the loop.  
+- We’re building Emergent Actors, not oracles. With agency comes responsibility: When we grant a system agency, we also inherit the duty to make its intent clear, set boundaries on its course of action and preserve causal feedback loops so actions remain grounded in reality.
 
-- Alignment in practice means clear objectives and corrigible behavior — systems that update on evidence, accept oversight, and fail safely when the world surprises us.  
+- Alignment, in practice, is about setting clear objectives and fostering corrigible behavior — systems that update on new evidence, accept oversight without resistance, and disengage safely when confronted with unforeseen circumstances.
 
 ---
 
