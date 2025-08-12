@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "BYOK and Crypto Shredding for Compliance-Driven Data Security"
+title: "BYOK and Crypto Shredding for Compliance-Driven Data Protection"
 date: 2025-08-14
 permalink: /blog/byok-crypto-shredding-architecture/
 categories: [security, architecture, encryption, compliance]

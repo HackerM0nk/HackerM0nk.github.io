@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Multi-Cloud Network Security Strategy"
+title: "Securing Multi-Cloud Networks: From Immediate Controls to Zero Trust"
 date: 2025-08-15
 permalink: /blog/multi-cloud-network-security-strategy/
 categories: [security]

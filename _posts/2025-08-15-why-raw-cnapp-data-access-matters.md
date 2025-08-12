@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Why Raw CNAPP Data Access Matters — and Where It Could Go Next"
+title: "Raw CNAPP Data: Why It Matters and the Future of Cloud Security Analytics"
 date: 2025-08-3
 permalink: /blog/raw-cnapp-data-access/
 categories: [security]
