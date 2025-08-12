@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "eBPF for Service Mesh, Runtime Security and API Security"
+title: "eBPF in Action: Service Mesh, Runtime Threat Detection, and API Defense"
 date: 2025-08-7
 permalink: /blog/ebpf-security-use-cases/
 categories: [security]

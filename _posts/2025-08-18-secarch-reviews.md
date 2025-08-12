@@ -1,11 +1,11 @@
 ---
 layout: single
-title: "Threat Modeling for Large-Scale Distributed Systems"
+title: "Architecting Security for Products & Distributed Platforms"
 date: 2025-08-15
 permalink: /blog/security-arch-review-threat-modeling/
 categories: [security]
 tags: [architecture-review, threat-modeling, risk-ranking, multi-cloud, devsecops]
-excerpt: "A seasoned, methodical approach to building a security architecture review and threat modeling practice from scratch for complex, distributed, multi-cloud products."
+excerpt: "Threat Modeling for Products & Distributed Systems"
 toc: true
 toc_sticky: true
 author_profile: false

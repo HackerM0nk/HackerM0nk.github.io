@@ -1,11 +1,11 @@
 ---
 layout: single
-title: "Automating Dependency Updates & Code Refactoring using — Renovate + OpenRewrite"
+title: "Eliminating Tech Debt: Automated Dependency Updates & Code Refactoring"
 date: 2025-08-15
 permalink: /blog/gitlab-renovate-openrewrite/
 categories: [security, devsecops, automation]
 tags: [gitlab, renovate, openrewrite, dependency-management]
-excerpt: "How to keep base images and app dependencies fresh with Renovate and OpenRewrite"
+excerpt: "Renovate and OpenRewrite"
 toc: true
 toc_sticky: true
 author_profile: false

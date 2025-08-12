@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Security by Design in the SDLC"
+title: "Defense in Depth for Cloud Native Infrastructure"
 date: 2025-08-17
 permalink: /blog/secure-sdlc-by-design/
 categories: [security]
@@ -27,7 +27,6 @@ The secure SDLC extends beyond development; it spans **product planning, archite
 
 ---
 ![Secure SDLC overview]({{ '/images/sdlc7.png' | relative_url }})
----
 
 # Designing a Secure SDLC for Multi-Cloud, Distributed Platforms
 
@@ -40,20 +39,21 @@ This post outlines a **layer-by-layer security blueprint** you can operationaliz
 
 ---
 
-## 1. Product Planning & Architecture — Security from Whiteboard to PRD
+## Product Planning & Architecture — Security from Whiteboard to PRD
 
 **Objective:** Threat-model early, build controls into the system contract before a single commit exists.
 
-| Security Focus | Implementation Patterns | Key Risks if Ignored |
-| --- | --- | --- |
-| **Threat Modelling** | Map trust boundaries, attack surfaces, and high-value assets. Include abuse cases alongside user stories. | Blind spots in architecture, exploitable implicit trust |
-| **Data Classification** | Tag data flows by confidentiality, integrity, regulatory scope (GDPR, PCI DSS, HIPAA, FedRAMP). | Data exfiltration, regulatory fines |
-| **Secure-by-Default Patterns** | Principle of least privilege, deny-by-default network posture, authenticated inter-service calls only. | Service spoofing, lateral movement |
-| **API Hardening** | Strong AuthN/AuthZ, schema validation, rate limiting, contract tests in CI. | API abuse, injection attacks |
+| Security Requirement                                   | Implementation Patterns                                                                                         | Key Risks if Ignored                                                         |
+|----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| **Threat Modeling** <br> _Docs, System Architecture, Product Overview_ | Map trust boundaries, attack surfaces, and high-value assets. Include abuse cases alongside user stories.        | Blind spots in architecture, exploitable implicit trust                       |
+| **Code Scans** <br> _Inventory of Git repos, folders, and modules_     | Run SAST/SCA on all repositories; ensure modules are mapped to owners; automate dependency checks in CI/CD.      | Undetected vulnerable dependencies, unowned code paths                         |
+| **Cloud Security Review** <br> _Cloud infra + container image inventory_ | Apply principle of least privilege, deny-by-default posture, authenticated inter-service calls only. Assess both existing and newly deployed components. | Service spoofing, lateral movement, exposure of unprotected assets             |
+| **Pentesting** <br> _Access to product environments & endpoints_       | Strong AuthN/AuthZ, schema validation, rate limiting, contract tests in CI. Scope includes both internal and external attack surfaces. | API abuse, injection attacks, privilege escalation                             |
+| **Data Classification**                                         | Tag data flows by confidentiality, integrity, and regulatory scope (GDPR, PCI DSS, HIPAA, FedRAMP).               | Data exfiltration, regulatory fines                                            |
 
 ---
 
-## 2. Code — Shifting Security to the Commit
+## 1. Code — Shifting Security to the Commit
 
 **Objective:** Block vulnerabilities before they reach artifact builds.
 
@@ -66,7 +66,7 @@ This post outlines a **layer-by-layer security blueprint** you can operationaliz
 
 ---
 
-## 3. Container — Building Immutable, Hardened Artifacts
+## 2. Container — Building Immutable, Hardened Artifacts
 
 **Objective:** Ship minimal, verified, and locked-down runtime images.
 
@@ -79,7 +79,7 @@ This post outlines a **layer-by-layer security blueprint** you can operationaliz
 
 ---
 
-## 4. Compute — Securing Core Workloads
+## 3. Compute — Securing Core Workloads
 
 **Objective:** Strong identity, encryption, and runtime visibility.
 
@@ -92,7 +92,7 @@ This post outlines a **layer-by-layer security blueprint** you can operationaliz
 
 ---
 
-## 5. Cluster — Kubernetes and Beyond
+## 4. Cluster — Kubernetes and Beyond
 
 **Objective:** Isolate, observe, and enforce zero-trust at the orchestration layer.
 
@@ -105,7 +105,7 @@ This post outlines a **layer-by-layer security blueprint** you can operationaliz
 
 ---
 
-## 6. Cloud — Multi-Cloud Governance & Detection
+## 5. Cloud — Multi-Cloud Governance & Detection
 
 **Objective:** Detect misconfigurations, enforce policy, respond in near-real-time.
 
@@ -118,7 +118,7 @@ This post outlines a **layer-by-layer security blueprint** you can operationaliz
 
 ---
 
-## 7. CDN & Edge — Securing the Delivery Perimeter
+## 6. CDN & Edge — Securing the Delivery Perimeter
 
 **Objective:** Minimize exposure at the global ingress points.
 
@@ -131,7 +131,7 @@ This post outlines a **layer-by-layer security blueprint** you can operationaliz
 
 ---
 
-## Continuous Compliance as a Live Guardrail
+<!-- ## Continuous Compliance as a Live Guardrail
 
 Compliance is **not** a quarterly spreadsheet exercise—it’s an always-on governance layer:
 
@@ -148,9 +148,9 @@ Security in multi-cloud platforms is a **closed feedback system**:
 1. **Launch Approval (LA)** → Threat models and architecture sign-offs.
 2. **General Availability (GA)** → Expanded pen-tests, chaos security experiments.
 3. **Runtime** → Telemetry from CNAPP, eBPF, SIEM.
-4. **Back to Design** → Architecture evolves based on intel and incidents.
+4. **Back to Design** → Architecture evolves based on intel and incidents. -->
 
----
+<!-- --- -->
 
 ### Final Thoughts
 
