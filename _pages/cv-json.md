@@ -10,8 +10,8 @@ author_profile: true
 <!-- **Phone:** +91-8554907741   -->
 **Email:** [shivamvviiita@gmail.com](mailto:shivamvviiita@gmail.com)  
 **LinkedIn:** [linkedin.com/in/shivamvv](https://linkedin.com/in/shivamvv)  
-<!-- **GitHub:** [github.com/HackerM0nk](https://github.com/HackerM0nk)   -->
-**Resume:** [PDF](https://github.com/HackerM0nk/HackerM0nk.github.io/blob/master/Shivam%27s%20Resume.pdf)
+**GitHub:** [github.com/HackerM0nk](https://github.com/HackerM0nk)  
+**Resume:** [PDF](https://github.com/HackerM0nk/HackerM0nk.github.io/blob/master/Shivam%27-%20Resume.pdf)
 
 
 ---
