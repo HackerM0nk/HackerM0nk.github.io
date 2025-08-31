@@ -8,38 +8,13 @@
    sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
  */
 
-@import
-    "vendor/breakpoint/breakpoint",
+@import "vendor/breakpoint/breakpoint", "themes", "theme/default", "theme/dark", "include/mixins", "vendor/susy/susy", "layout/reset", "layout/base", "include/utilities", "layout/tables", "layout/buttons", "layout/notices", "layout/masthead", "layout/navigation", "layout/footer", "syntax", "layout/forms", "layout/page", "layout/archive", "layout/sidebar", "vendor/font-awesome/fontawesome", "vendor/font-awesome/solid", "vendor/font-awesome/brands", "vendor/magnific-popup/magnific-popup", "custom";
 
-    "themes",
-    "theme/default",
-    "theme/dark",
-
-    "include/mixins",
-    "vendor/susy/susy",
-
-    "layout/reset",
-    "layout/base",
-
-    "include/utilities",
-    "layout/tables",
-    "layout/buttons",
-    "layout/notices",
-    "layout/masthead",
-    "layout/navigation",
-    "layout/footer",
-    "syntax",
-
-    "layout/forms",
-
-    "layout/page",
-    "layout/archive",
-    "layout/sidebar",
-
-    "vendor/font-awesome/fontawesome",
-    "vendor/font-awesome/solid",
-    "vendor/font-awesome/brands",
-    "vendor/magnific-popup/magnific-popup",
-    "custom"
-
-;
+/* Keep about page normal */
+body.page--about #main {
+  max-width: 1280px !important;
+  width: auto !important;
+  margin-left: auto !important;
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+}

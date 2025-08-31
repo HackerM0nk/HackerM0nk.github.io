@@ -18,9 +18,13 @@
 
 .page {
   @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
-    @include suffix(2 of 12);
+    @include span(12 of 12 last);
+    @include prefix(0 of 12);
+    @include suffix(0 of 12);
+    max-width: none !important;
+    margin-left: 2% !important;
+    margin-right: 2% !important;
+    width: 96% !important;
   }
 
   .page__inner-wrap {
@@ -31,6 +35,19 @@
     .page__share {
       @include full();
     }
+  }
+}
+
+/* Override for about/resume pages - position content away from sidebar */
+body:has(.author__avatar) .page {
+  @include breakpoint($large) {
+    @include span(9 of 12 last);
+    @include prefix(2.5 of 12);
+    @include suffix(0.5 of 12);
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: auto !important;
   }
 }
 
