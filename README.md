@@ -29,7 +29,7 @@ Create new Markdown files in `_posts/` using the format:
 
 ## 📂 Repository Structure (High-Level)
 
-
+```
 _root/                 → Site root (config files, homepage)
 │
 ├── _config.yml         → Global site settings (title, description, menus, theme)
@@ -45,3 +45,4 @@ _root/                 → Site root (config files, homepage)
 ├── images/             → All image files
 ├── files/              → PDFs & downloadable resources (CV, reports, slides)
 └── markdown_generator/ → Scripts to auto-generate markdown from TSV/CSV
+```
