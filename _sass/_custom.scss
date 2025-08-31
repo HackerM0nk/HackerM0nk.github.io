@@ -234,13 +234,21 @@ body.page--about .page {
 .homepage-hero {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 4rem 2rem;
-  margin: 0 0 4rem 0;
+  margin: 0 auto 4rem auto;
   text-align: center;
-  width: 100%;
+  width: calc(100% - 240px);
+  max-width: 1600px;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(102, 126, 234, 0.15);
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .homepage-hero {
+    width: 100%;
+    margin: 0 0 4rem 0;
+  }
 }
 
 .homepage-hero::before {
@@ -289,9 +297,16 @@ body.page--about .page {
 
 /* Expertise Showcase */
 .expertise-showcase {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto 6rem auto;
   padding: 0 2rem;
+  width: calc(100% - 240px);
+}
+
+@media (max-width: 1024px) {
+  .expertise-showcase {
+    width: 100%;
+  }
 }
 
 .section-header {
@@ -433,9 +448,16 @@ body.page--about .page {
 /* CTA Section */
 .cta-section {
   text-align: center;
-  max-width: 800px;
+  max-width: 1600px;
   margin: 6rem auto 4rem auto;
   padding: 0 2rem;
+  width: calc(100% - 240px);
+}
+
+@media (max-width: 1024px) {
+  .cta-section {
+    width: 100%;
+  }
 }
 
 .cta-content {

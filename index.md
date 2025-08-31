@@ -12,14 +12,13 @@ header:
 <div class="homepage-hero">
   <div class="hero-content">
     <h1 class="hero-tagline">Building <span class="highlight">secure</span> and <span class="highlight">scalable</span> systems at enterprise scale</h1>
-    <p class="hero-description">Platform architect and security engineer with deep expertise in cloud infrastructure, DevSecOps, and enterprise-grade solutions. I transform complex technical challenges into robust, secure platforms that scale.</p>
+    <p class="hero-description">Software Security Engineer & Architect with deep expertise in Cloud Infrastructure, DevSecOps, and enterprise-grade solutions. I transform security challenges in complex systems into robust, secure platforms that scale.</p>
   </div>
 </div>
 
 <div class="expertise-showcase">
   <div class="section-header">
     <h2>Core Expertise</h2>
-    <p>Three pillars of technical excellence</p>
   </div>
   
   <div class="expertise-grid">
@@ -90,7 +89,7 @@ header:
       <span>View Full Resume</span>
       <span>→</span>
     </a>
-    <a href="/contact/" class="cta-btn secondary">
+    <a href="https://www.linkedin.com/in/shivamvv/" class="cta-btn secondary" target="_blank">
       <span>Get In Touch</span>
       <span>✉</span>
     </a>
