@@ -1,11 +1,11 @@
 ---
 layout: single
-title: "Distributed Systems, Seen Through a Security Lens"
-date: 2025-08-17
-permalink: /blog/distributed-systems-security-lens/
+title: "Designing Security into Distributed Systems: A Friendly, Thorough Guide"
+date: 2025-08-19
+permalink: /blog/distributed-systems-security/
 categories: [security]
-tags: [distributed-systems, architecture, threat-modeling, devsecops, cloud, zero-trust]
-excerpt: "A security architect’s guide to the moving parts of distributed systems—why they exist, where the trust boundaries live, and how to make them secure by design."
+tags: [distributed-systems, architecture, threat-modeling, devsecops, cloud, zero-trust, sdlc]
+excerpt: "What distributed systems are, why we build them, where the risks hide, and how to make security the default—explained crisply, like you and I are whiteboarding together."
 toc: true
 toc_sticky: true
 author_profile: false
@@ -13,400 +13,267 @@ read_time: true
 classes: [wide, xl]
 ---
 
-Security for distributed systems starts with *why the system is distributed at all*: scale, latency, team autonomy, or fault isolation. Each reason introduces new trust boundaries and failure modes. This post walks the core components you’ll actually meet in modern products—what they’re for, where they can be abused, and the controls that turn “best effort” into **secure-by-default**.
-
-> Pattern for each section: **Why it exists → Trust boundaries → Failure & abuse modes → Secure-by-design controls → Detect & respond**.
+> **Goal:** If you understand *why* a system is distributed, you can place the trust boundaries, anticipate the failure modes, and fit the right controls **before** bugs ship. This guide connects the dots between distributed systems and practical security engineering.
 
 ---
 
 ## Index
 
-- [Service decomposition & interfaces](#service-decomposition--interfaces)
-- [API protocols & serialization](#api-protocols--serialization)
-- [Identity & service-to-service trust](#identity--service-to-service-trust)
-- [Networking & service discovery](#networking--service-discovery)
-- [Resilience patterns (timeouts, retries, idempotency, breakers)](#resilience-patterns-timeouts-retries-idempotency-breakers)
-- [State & storage](#state--storage)
-- [Caching](#caching)
-- [Messaging: queues & streams](#messaging-queues--streams)
-- [Event-driven workflows & sagas](#event-driven-workflows--sagas)
-- [Scheduling & batch](#scheduling--batch)
-- [Configuration, secrets, feature flags](#configuration-secrets-feature-flags)
-- [Orchestration & runtime](#orchestration--runtime)
-- [Multi-region & disaster recovery](#multi-region--disaster-recovery)
-- [Edge & CDN](#edge--cdn)
-- [Data pipelines & analytics](#data-pipelines--analytics)
-- [Supply chain & CI/CD](#supply-chain--cicd)
-- [Observability](#observability)
-- [Detections & runtime security](#detections--runtime-security)
-- [Compliance & data handling](#compliance--data-handling)
-- [Operations & incident response](#operations--incident-response)
+1. [Why we distribute at all](#1-why-we-distribute-at-all)  
+2. [Edge & CDN](#2-edge--cdn)  
+3. [API Gateway & Protocols](#3-api-gateway--protocols)  
+4. [Identity & Service-to-Service Trust](#4-identity--service-to-service-trust)  
+5. [Services & Decomposition](#5-services--decomposition)  
+6. [Resilience Patterns](#6-resilience-patterns)  
+7. [State & Storage](#7-state--storage)  
+8. [Caching](#8-caching)  
+9. [Messaging (Queues & Streams)](#9-messaging-queues--streams)  
+10. [Event Workflows & Sagas](#10-event-workflows--sagas)  
+11. [Schedulers & Batch](#11-schedulers--batch)  
+12. [Config, Secrets & Feature Flags](#12-config-secrets--feature-flags)  
+13. [Orchestration & Runtime (Kubernetes, etc.)](#13-orchestration--runtime-kubernetes-etc)  
+14. [Multi-Region & Disaster Recovery](#14-multi-region--disaster-recovery)  
+15. [Data Pipelines & Analytics](#15-data-pipelines--analytics)  
+16. [Supply Chain & CI/CD](#16-supply-chain--cicd)  
+17. [Observability & Detections](#17-observability--detections)  
+18. [Compliance & Data Handling](#18-compliance--data-handling)  
+19. [How to start on Monday](#19-how-to-start-on-monday)  
+20. [Cheat-sheet: boundary invariants](#20-cheat-sheet-boundary-invariants)  
+   — *Plus a short closing thought.*
 
 ---
 
-## Service decomposition & interfaces
+## 1) Why we distribute at all
 
-**Why**: Scale teams and deploy independently; isolate blast radius; specialize SLAs.
-
-**Trust boundaries**: Between services and their callers (user→edge, service→service, admin tools→control planes).
-
-**Failure/abuse**: “Internal” endpoints exposed; confused-deputy flows; IDOR/BOLA on object APIs; accidental fan-out.
-
-**Secure-by-design**  
-- Explicit ownership per API; deny-by-default for every action.  
-- Object-level authorization (“can(subject, action, object)”) on *every* read/write.  
-- Contract-first APIs; schema validation at the edge and service.
-
-**Detect & respond**  
-- AuthN/AuthZ decision logs with object identifiers.  
-- Outlier detection: unusual subject→object access patterns.
+We split a system into pieces for four honest reasons: **scale** (one box can’t handle it), **latency** (keep work close to users and data), **team autonomy** (small teams ship without stepping on each other), and **fault isolation** (a crack in one tile shouldn’t shatter the floor). Each reason adds **hops**. Every hop is a **contract**. And every contract needs the same six things: **identity**, **validation**, **limits**, **least privilege**, **encryption**, and **observability**. Hold on to that mantra—we’ll use it at each layer.
 
 ---
 
-## API protocols & serialization
+## 2) Edge & CDN
 
-**Why**: HTTP+JSON is ubiquitous; gRPC/Protobuf for latency/typing; Avro/Thrift in data planes.
+**Why it exists.** This is your moat and drawbridge. It absorbs bursts, terminates TLS, caches safe responses, and lets you run tiny policies right where users land.
 
-**Trust boundaries**: Deserializers, code generators, API gateways.
+**How it fails.** Private pages get cached under loose keys; TLS/HSTS is misconfigured; a “catch-all WAF” blocks nothing important and everything annoying; rate limits only exist on paper.
 
-**Failure/abuse**: Deserialization bugs; version skew; DTOs that leak internal fields; over-posting.
+**Secure by design.** Turn on modern TLS with **HSTS** and automate cert rotation. Treat the CDN as a **validator**: schema checks for basic inputs, strict media types, and **signed cookies/URLs** for downloads. Build cache keys that include **auth variant, locale, device** so user-specific data never bleeds.
 
-**Secure-by-design**  
-- Strict schema validation (OpenAPI/JSON Schema/Protobuf); reject unknown fields.  
-- Backward-compatible versioning; no “accept anything” DTOs.  
-- Least data: only return what the caller needs; field-level filters.
-
-**Detect & respond**  
-- Schema-mismatch counters; 4xx patterns; contract-test failures in CI.
+**How you’ll know.** Watch 4xx/5xx by **path**, track **WAF rule families** (are they doing real work?), and alarm on sudden bursts from a single ASN/IP range. Review false-positives weekly, not “someday”.
 
 ---
 
-## Identity & service-to-service trust
+## 3) API Gateway & Protocols
 
-**Why**: You must know *who* acts—human, service, or job—and with *what scope*.
+**Why it exists.** It’s the contract desk. You centralize cross-cutting rules—versioning, schema, auth, rate limits—so every service doesn’t reinvent them.
 
-**Trust boundaries**: Edge (user auth), east-west (service identity), admin planes.
+**How it fails.** Deserialization bugs, version skew between client and server, “internal” routes that quietly go public, and payloads that allow **over-posting** (you accepted fields you never meant to).
 
-**Failure/abuse**: Token replay; JWT audience mix-ups; long-lived secrets; mTLS gaps.
+**Secure by design.** Enforce **OpenAPI/JSON-Schema/Protobuf** with **unknown-field rejection**. Set **size/time limits** and use consistent error shapes (no stack traces in production). Validate **OIDC/OAuth** tokens for issuer/audience with short lifetimes. Start from **deny by default** and explicitly allow operations.
 
-**Secure-by-design**  
-- OIDC/OAuth at edge; short-lived tokens; audience/issuer checks.  
-- mTLS for service identity; SPIFFE/SPIRE or managed mesh identities.  
-- Fine-grained scopes; default deny; centralized policy engine.
-
-**Detect & respond**  
-- Token issuance/validation metrics; anomaly on token reuse from new IP/region.  
-- Failed mTLS handshakes; policy decision logs.
+**How you’ll know.** Slice metrics by **route + version**. Add contract tests in CI that fail builds when behavior drifts from the spec.
 
 ---
 
-## Networking & service discovery
+## 4) Identity & Service-to-Service Trust
 
-**Why**: Route traffic, balance load, and find services at runtime.
+**Why it exists.** Every actor—humans, services, and scheduled jobs—needs a **provable** and **scoped** identity.
 
-**Trust boundaries**: Load balancers, DNS, mesh sidecars/proxies.
+**How it fails.** Long-lived secrets get copied; tokens are replayed to the wrong audience; “internal-only” calls ride plaintext; someone sneaks in without **mTLS**.
 
-**Failure/abuse**: SSRF via egress; open egress to metadata endpoints; wildcard DNS; poisoned discovery.
+**Secure by design.** Users authenticate with OIDC at the edge. Services authenticate with **mTLS** (SPIFFE/SPIRE or a managed mesh). Give every service a narrowly scoped account and put authorization behind a **policy engine** (RBAC/ABAC/OPA) with local decision caching. Rotate everything; publish rotation events.
 
-**Secure-by-design**  
-- Egress control: allowlists, DNS pinning, metadata protection.  
-- Private DNS zones for internal services; authenticated discovery.  
-- L4/L7 network policies to restrict lateral movement.
-
-**Detect & respond**  
-- Egress logs to private IPs; DNS anomalies (sudden internal lookups).  
-- Drop counters on denied egress.
+**How you’ll know.** Alert on token reuse from new geo/IP, on failed mTLS handshakes, and on policy decisions (who/what/object/result) that suddenly spike.
 
 ---
 
-## Resilience patterns (timeouts, retries, idempotency, breakers)
+## 5) Services & Decomposition
 
-**Why**: Networks fail; downstreams brown out; calls duplicate.
+**Why it exists.** Smaller, well-named boxes have smaller blast radii and clearer ownership.
 
-**Trust boundaries**: Callers vs downstream protections.
+**How it fails.** Classic **IDOR/BOLA**: code fetches an object by ID but never checks **who** asked. Confused-deputy patterns sneak in. A simple call turns into accidental **fan-out** across ten services.
 
-**Failure/abuse**: Retry storms; duplicate side effects; thundering herds; hidden partial failures.
+**Secure by design.** Make authorization **object-centric**: `can(subject, action, objectId)` on every read/write. Lock down DTOs with **allowlists**. Require **idempotency** for mutations so retries don’t double-charge. “Deny by default” means no silent fall-through to admin.
 
-**Secure-by-design**  
-- Timeouts everywhere; bounded retries with jitter.  
-- Idempotency keys on writes; dedupe consumers.  
-- Circuit breakers, bulkheads, token buckets at the edge.
-
-**Detect & respond**  
-- SLO error budgets; breaker open/half-open metrics; retry-rate dashboards.
+**How you’ll know.** Log decisions by **object** and hunt for outliers (one user reading 10× their usual tenant count). Meter fan-out and N+1 queries.
 
 ---
 
-## State & storage
+## 6) Resilience Patterns
 
-**Why**: Durable state (SQL/NoSQL), index/search, graph relations.
+**Why it exists.** Networks drop, timeouts happen, and retries create duplicates. That’s life.
 
-**Trust boundaries**: App↔DB, backup/restore, cross-region replication.
+**How it fails.** Unbounded retries create a **self-DDoS**. Side effects repeat (double refunds). Partial failures corrupt state and nobody notices until month-end.
 
-**Failure/abuse**: Injection; weak tenant isolation; ghost data after “delete”; exposed snapshots.
+**Secure by design.** Put **timeouts** everywhere. Use **bounded retries** with **exponential backoff + jitter**. Treat idempotency as a feature, not a hope. Use circuit breakers and bulkheads so things fail **quietly**.
 
-**Secure-by-design**  
-- Parameterized queries only; least-privilege DB users per service.  
-- Encryption at rest with customer-scoped keys (BYOK/CMK) for regulated data.  
-- Data lifecycle: retention, deletion that actually deletes (crypto-shredding where appropriate).  
-- Row/tenant guards enforced by policy or DB features (RLS).
-
-**Detect & respond**  
-- Audit logs on sensitive tables/collections; replication drift alarms.  
-- Backup integrity checks; restore drills.
+**How you’ll know.** Monitor breaker open rates, retry counters, and duplicate-write detectors. Tie deploys to **SLO budgets** so you don’t ship into a screaming system.
 
 ---
 
-## Caching
+## 7) State & Storage
 
-**Why**: Latency and cost; offload hot reads.
+**Why it exists.** It’s the source of truth: tables, indexes, search, backups.
 
-**Trust boundaries**: Cache keys, shared layers (CDN/edge, Redis/memcached).
+**How it fails.** Injection sneaks in through string-built queries. Tenants collide in the same tables. “Delete” only hides rows. Snapshots wander into public buckets.
 
-**Failure/abuse**: Cache poisoning; key collisions; stale authorization decisions.
+**Secure by design.** Ban string-built SQL in CI and only allow **parameterized queries**. Use per-service DB users with **least privilege** and network isolation. Pull secrets from a manager at runtime, not env files. Encrypt at rest with per-tenant keys when required (**BYOK/CMK**) and support **crypto-shredding** for erasure. Enforce tenant binding via **row-level security** or app guards that inject the tenant filter.
 
-**Secure-by-design**  
-- Namespaced keys include tenant/user and version.  
-- Never cache authorization outcomes longer than their TTL; purge on role change.  
-- TLS for cache links; auth on caches (no open Redis).
-
-**Detect & respond**  
-- Miss/hit patterns by principal; invalidation errors; elevated 403→200 flips.
+**How you’ll know.** Turn on audit logs for sensitive tables. Alarm on replication drift. Run **restore drills**—a backup you can’t restore is theater.
 
 ---
 
-## Messaging: queues & streams
+## 8) Caching
 
-**Why**: Decouple producers/consumers; smooth load; enable async workflows.
+**Why it exists.** Latency and cost. Edge, gateway, and data-layer caches save you trips.
 
-**Trust boundaries**: Producer→broker, consumer groups, schema registries.
+**How it fails.** Cache poisoning, key collisions between tenants, stale permissions, and the infamous open Redis.
 
-**Failure/abuse**: Poison messages; replays; schema breakage; unauthorized consumption.
+**Secure by design.** Namespaced keys (`tenant:user:version`). Short TTLs or **event-driven invalidation** for authorization decisions. Require TLS and authentication to caches.
 
-**Secure-by-design**  
-- AuthN/Z to topics/queues; scoped access per service.  
-- Exactly-once-ish via idempotent consumers and per-message keys.  
-- Schema registry with compatibility checks; encrypt payloads for sensitive fields.
-
-**Detect & respond**  
-- Dead-letter queues with alarms; consumer lag SLOs; unusual producer identities.
+**How you’ll know.** Watch hit/miss by **principal**. Alert on invalidation failures and weird flips from 403 to 200.
 
 ---
 
-## Event-driven workflows & sagas
+## 9) Messaging (Queues & Streams)
 
-**Why**: Coordinate distributed transactions without 2PC; achieve eventual consistency.
+**Why it exists.** You decouple producers and consumers, smooth load, and preserve order where needed.
 
-**Trust boundaries**: Orchestrator/compensator services; event buses.
+**How it fails.** Poison messages clog consumers. Old messages get replayed as if they were new. Schemas drift and nobody told the reader. A curious service subscribes to a topic it shouldn’t.
 
-**Failure/abuse**: Orphaned state; compensations that leak data; replay attacks.
+**Secure by design.** Enforce per-topic **AuthN/Z** and separate producer from consumer scopes. Publish through a **schema registry** with compatibility checks. Make consumers **idempotent** and use dead-letter queues with quarantine. Encrypt sensitive fields; headers aren’t private.
 
-**Secure-by-design**  
-- Explicit state machines; idempotent steps & compensations.  
-- Signed events with nonces/timestamps; bounded retention.  
-- Per-step authorization (not just at the start).
-
-**Detect & respond**  
-- Saga state dashboards; compensation rates; orphan detectors.
+**How you’ll know.** Alert on DLQ growth and consumer lag. Track producer identities. Highlight schema-version anomalies.
 
 ---
 
-## Scheduling & batch
+## 10) Event Workflows & Sagas
 
-**Why**: Periodic jobs, data compaction, maintenance, reports.
+**Why it exists.** Real work spans services. Sagas coordinate steps and compensations without heavy 2PC.
 
-**Trust boundaries**: Job runners, cron controllers, artifact stores.
+**How it fails.** Orphaned state after a mid-way crash. Compensations that “sort of” reverse side effects. Replay of stale events. Double shipping or double refunding in the chaos.
 
-**Failure/abuse**: Jobs run with excessive privilege; unbounded fan-out; stale secrets baked in.
+**Secure by design.** Model **explicit state machines**. Make every step and compensation **idempotent**. **Sign events** and attach nonces/timestamps; bound retention so ancient events don’t come back. Re-authorize **each step**; don’t trust the original auth forever.
 
-**Secure-by-design**  
-- Dedicated identities and least privilege for each job.  
-- Concurrency limits; backoff; per-tenant partitioning.  
-- Secrets injection at runtime, not baked into images.
-
-**Detect & respond**  
-- Missed schedule alerts; run-time variance; job-level audit logs.
+**How you’ll know.** Time out stuck sagas, graph compensation spikes, and sweep for orphans on a schedule.
 
 ---
 
-## Configuration, secrets, feature flags
+## 11) Schedulers & Batch
 
-**Why**: Change behavior without redeploy; keep secrets out of code.
+**Why it exists.** Compaction, billing, reindexing, and ML features—they all run on the quiet backbone.
 
-**Trust boundaries**: Config servers, secret stores, flag services.
+**How it fails.** A cron job with god-mode credentials, fan-out that floods downstreams, secrets baked into images, and month-end stampedes.
 
-**Failure/abuse**: Secrets in env/commit; over-broad read access; stale flags exposing risky code paths.
+**Secure by design.** Give each job a **dedicated identity** with least privilege. Cap concurrency, add backoff, and keep **kill switches** handy. Inject secrets at runtime and favor short-lived tokens.
 
-**Secure-by-design**  
-- Central secret manager; short-lived tokens; encryption in transit/at rest.  
-- Per-service paths and policies; just-in-time retrieval.  
-- Flag safety: per-tenant rollout, kill switches, and default-safe values.
-
-**Detect & respond**  
-- Secret access logs; unusual read patterns; flag-change audit trails.
+**How you’ll know.** Alert on missed runs and runtime variance. Keep per-job audit trails.
 
 ---
 
-## Orchestration & runtime
+## 12) Config, Secrets & Feature Flags
 
-**Why**: Schedule/auto-heal workloads; isolate tenants; standardize ops.
+**Why it exists.** Change behavior fast and keep secrets out of code.
 
-**Trust boundaries**: Nodes, pods/containers, admission controllers, registries.
+**How it fails.** Secrets in git or plaintext env. “Read everything” policies. Flags default to unsafe and get flipped by accident.
 
-**Failure/abuse**: Escalation via privileged containers; image poisoning; noisy neighbors.
+**Secure by design.** Store secrets centrally with per-service paths and **encryption in transit/at rest**. Fetch **just-in-time**; rotate often; cache with care. Flags should **default safe**, roll out per tenant or cohort, and always have **kill switches**.
 
-**Secure-by-design**  
-- Signed images, SBOMs, and admission policies (no root, drop caps, read-only FS).  
-- Network policies; mTLS pod-to-pod; runtime seccomp/AppArmor.  
-- Minimal base images; fast patch pipelines.
-
-**Detect & respond**  
-- Admission denials by reason; node/namespace anomaly detection; registry drift.
+**How you’ll know.** Monitor secret access by principal. Audit every flag change. Watch for traffic spikes right after flips.
 
 ---
 
-## Multi-region & disaster recovery
+## 13) Orchestration & Runtime (Kubernetes, etc.)
 
-**Why**: Survive AZ/region failures; meet latency targets.
+**Why it exists.** Schedule, isolate, patch, and observe containers at scale.
 
-**Trust boundaries**: Replication channels, failover controllers, traffic routers.
+**How it fails.** Privileged pods, unsigned images, flat east-west networks, and admission control that’s there but toothless.
 
-**Failure/abuse**: Stale data after failover; split-brain; misrouted sensitive traffic across jurisdictions.
+**Secure by design.** Require **signed images + SBOMs** and verify them at admission. Drop root and capabilities, use read-only FS, and enable seccomp/AppArmor. Add **network policies** plus pod-to-pod **mTLS**. Keep service accounts narrow. Standardize **golden base images** and patch quickly.
 
-**Secure-by-design**  
-- Clear RTO/RPO; data classification tied to residency controls.  
-- Region-aware keys; replication encryption; runbooks for partial failure.  
-- Health-based routing with guardrails (never fail “secure” features open).
-
-**Detect & respond**  
-- Drill GA/LA cutovers; replication lag alarms; config-drift SLOs.
+**How you’ll know.** Break down admission denials by reason, alert on unsigned image attempts, and watch for namespace/node anomalies.
 
 ---
 
-## Edge & CDN
+## 14) Multi-Region & Disaster Recovery
 
-**Why**: Latency, offload, DDoS/WAF, geo routing.
+**Why it exists.** You want to survive AZ hiccups, region events, and maybe meet latency goals across continents.
 
-**Trust boundaries**: Edge functions, caching layers, TLS termination.
+**How it fails.** Authentication fails **open** during failover. Data sloshes across borders. Configurations drift between regions and never converge.
 
-**Failure/abuse**: Leaky caching of authenticated responses; weak TLS; noisy WAF exceptions.
+**Secure by design.** Write down **RTO/RPO** and drill them like incidents. Use **region-scoped keys**, encrypt replication, and enforce residency for regulated data. Route by health but with guardrails. Never fail auth **open**.
 
-**Secure-by-design**  
-- TLS modern suites, HSTS; per-path WAF policies; bot management.  
-- Signed cookies/URLs; cache keys include auth/variant where needed.  
-- Rate limits & schema validation at the edge.
-
-**Detect & respond**  
-- WAF hit rates; false positive review loops; edge error/latency SLOs.
+**How you’ll know.** Alert on cross-region data movement. Treat DR exercises like real incidents and track findings to closure. Run continuous **config-drift** checks.
 
 ---
 
-## Data pipelines & analytics
+## 15) Data Pipelines & Analytics
 
-**Why**: ETL/ELT, ML features, compliance reports.
+**Why it exists.** ETL/ELT for BI and ML, feature stores, and compliance reporting—that’s your “second system”.
 
-**Trust boundaries**: Ingest→lake→warehouse→BI; cross-account roles.
+**How it fails.** PII sprawls into raw zones and notebooks. Buckets go public “for a minute”. “Temp.csv” becomes permanent. Over-wide sharing allows accidental re-identification.
 
-**Failure/abuse**: PII sprawl; ungoverned joins; public buckets; shadow exports.
+**Secure by design.** Start with **data contracts** and lineage. Tag sensitivity at the **source**. Mask/tokenize in raw zones. Use **row-level security** and **time-boxed access**. For regulated zones, enforce BYOK/CMK. Sign exports and add quality gates (schema/null/range) to catch garbage early.
 
-**Secure-by-design**  
-- Data contracts; column-level lineage; masking/tokenization; row-level security.  
-- BYOK/CMK for regulated zones; time-boxed access; signed exports only.  
-- Quality gates (schema, nulls, ranges) in pipelines.
-
-**Detect & respond**  
-- Access audits by dataset; anomaly on data egress; lineage diffs.
+**How you’ll know.** Track dataset access anomalies, keep export audit trails, and alert on lineage diffs when upstreams change.
 
 ---
 
-## Supply chain & CI/CD
+## 16) Supply Chain & CI/CD
 
-**Why**: Build and ship with confidence.
+**Why it exists.** Build once, prove provenance, deploy safely.
 
-**Trust boundaries**: Source control, CI runners, artifact stores, registries.
+**How it fails.** Dependency confusion, typosquatted packages, malicious PRs, tampered artifacts, and leaked runner creds.
 
-**Failure/abuse**: Dependency confusion; malicious PRs; tampered images; leaked tokens.
+**Secure by design.** Gate merges with SAST/SCA/secret scanning. Pin dependencies or use allowlists. Produce **provenance attestations** (SLSA-style) and verify them at deploy. Separate **build** from **deploy** credentials. Protect environments and add manual gates for risky changes.
 
-**Secure-by-design**  
-- SAST/SCA/secret scanning; pinned deps with allowlists.  
-- Reproducible builds; provenance attestations (SLSA-style).  
-- Separate build vs deploy creds; policy gates pre-prod.
-
-**Detect & respond**  
-- Provenance verification at deploy; unusual CI job invocations; registry access alerts.
+**How you’ll know.** Track attestation verification rates, subscribe to dependency anomaly feeds, and monitor runner/registry access like a hawk.
 
 ---
 
-## Observability
+## 17) Observability & Detections
 
-**Why**: To *know* what the system is doing.
+**Why it exists.** You can’t defend what you can’t see, but you also don’t want to drown in noise.
 
-**Trust boundaries**: Log agents, metrics collectors, tracing backends.
+**How it fails.** Logs carry PII. Traces leak tokens. Dashboards are open to the internet. Retention grows without purpose.
 
-**Failure/abuse**: PII in logs; credential leakage; blind spots.
+**Secure by design.** Use **structured logs** with scrubbing. Never put secrets in traces. Sample with intent. Tag traces with tenant/subject. Lock dashboards by role and set finite retention. Add **eBPF-based** runtime sensors for syscall/network insight, but keep their privileges minimal and rules high-signal.
 
-**Secure-by-design**  
-- Structured logs; PII scrubbing; sampling with intent.  
-- Tenant-tagged traces; audit trails as first-class data.  
-- Access controls on observability data (it’s sensitive too).
-
-**Detect & respond**  
-- Budget alerts on error/latency; playbooks link to traces and dashboards.
+**How you’ll know.** Alert on PII scanner hits, dashboard access anomalies, and review detection precision/recall. Measure MTTR for contain/eradicate and test safe auto-isolation.
 
 ---
 
-## Detections & runtime security
+## 18) Compliance & Data Handling
 
-**Why**: Catch what design missed; shorten breach-to-mitigate time.
+**Why it exists.** Laws, contracts, and trust—from privacy regulations to enterprise commitments.
 
-**Trust boundaries**: Kernel/user space, agents, eBPF sensors.
+**How it fails.** “Delete” doesn’t actually delete. Keys exist but aren’t governed. Data leaves its allowed residence.
 
-**Failure/abuse**: Fileless attacks; container escapes; credential theft.
+**Secure by design.** Map **classification → controls**. Record lawful bases. Use BYOK/CMK and **field-level encryption** for sensitive attributes. Support **crypto-shredding** (drop keys to erase). Tie continuous compliance to **code, infra, and runtime evidence** so audits read like engineering, not theater.
 
-**Secure-by-design**  
-- Lightweight eBPF for syscall/netflow; least privilege for agents.  
-- Curated rules: process ancestry, socket ACLs, DNS exfil patterns.  
-- Integrate with SIEM/SOAR; auto-containment where safe.
-
-**Detect & respond**  
-- High-signal rules tied to runbooks; progressive hardening from “report-only” to “enforce”.
+**How you’ll know.** Log key usage and rotation. Produce deletion proofs. Alert on residency drift. Keep auditor-readable reports ready.
 
 ---
 
-## Compliance & data handling
+## 19) How to start on Monday
 
-**Why**: Laws, contracts, and customer trust.
-
-**Trust boundaries**: PII pipelines, key management, retention engines.
-
-**Failure/abuse**: Data residency violations; undeletable PII; weak keys.
-
-**Secure-by-design**  
-- Data classification drives controls; lawful basis tracked.  
-- BYOK/CMK, field-level encryption for sensitive attributes; crypto-shredding to fulfill erasure.  
-- Continuous compliance (CIS/NIST mappings in code, infra, and runtime).
-
-**Detect & respond**  
-- Control-to-evidence mapping; drift scanners; auditor-readable reports.
+1) **Trace one user action** end-to-end. Draw every hop: edge → gateway → service → queue → DB → analytics.  
+2) **Mark trust boundaries** where identity, protocol, or storage changes.  
+3) **Write invariants per boundary:** identity proven, schema validated, least-privileged, encrypted, rate-/cost-limited, observable.  
+4) **Enforce in code and config**—admissions, policies, CI tests—not just in a policy doc.  
+5) **Detect drift** with metrics, logs, tests, and admission controllers.  
+6) **Practice failure and recovery**: timeouts, idempotency, circuit breakers, runbooks, and DR drills.
 
 ---
 
-## Operations & incident response
+## 20) Cheat-sheet: boundary invariants
 
-**Why**: Systems drift; attackers adapt.
+- **Identity:** every caller is known (user/service/job), scoped, and short-lived.  
+- **Validation:** inputs match a schema; **unknown fields are rejected**; size/time boxed.  
+- **Limits:** rate, cost, and concurrency caps; retries bounded with **jitter**.  
+- **Least privilege:** narrow network reach, data scope, and action rights by default.  
+- **Encryption:** always in transit; at rest where meaningful; keys governed (BYOK/CMK).  
+- **Observability:** structured events that link **subject, action, object, and decision**—without leaking secrets.
 
-**Trust boundaries**: Pager processes, comms channels, change control.
-
-**Failure/abuse**: Pager fatigue; “hero ops”; unreviewed mitigations that create debt.
-
-**Secure-by-design**  
-- Runbooks with *pre-approved* containment steps; change windows for risky toggles.  
-- Game days, chaos tests, and post-incident learning—not blame.  
-- Separation of duties for high-impact controls.
-
-**Detect & respond**  
-- MTTA/MTTR tracked; lessons captured as tests/policies; recurring issues trigger design changes.
-
+---
 ---
 
 ### A quick threat-model checklist
@@ -417,6 +284,8 @@ Security for distributed systems starts with *why the system is distributed at a
 - **Trust boundaries**: Every place identity or authority changes.  
 - **Abuse cases**: How would *you* cheat your own system?  
 - **Controls**: Prevent, limit blast radius, detect fast, recover safely.  
-- **Evidence**: Can you *prove* a control ran, and see when it drifted?
+- **Evidence**: Can you *prove* a controlled run, and see when it drifted?
 
-**Bottom line:** distributed systems multiply surfaces and failure modes. Treat every boundary as an explicit design choice, bind identity to action, and make the secure thing the default—and the easy thing to do.
+### Closing thought
+
+Distributed systems are **a lot of small promises** traveling over unreliable networks. Security is the habit of making those promises explicit and enforceable. If you bind **identity** to **action**, validate with intent, limit by default, encrypt by habit, and observe on purpose, you’ll ship systems that not only scale—but **age well**.
