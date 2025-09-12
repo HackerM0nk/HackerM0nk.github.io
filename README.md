@@ -7,7 +7,7 @@ The site is deployed via GitHub Pages and is available at:
 
 It serves as a central hub for my:
 - Research & technical writing
-- Software/security projects
+- Software / Security projects
 - Publications, talks, and blog posts
 - Portfolio & personal updates
 
