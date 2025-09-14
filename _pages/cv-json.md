@@ -1,7 +1,7 @@
 ---
-title: "Resume"
+title: "Resume (JSON)"
 layout: single
-permalink: /cv/
+permalink: /cv/json/
 author_profile: true
 ---
 

@@ -1,16 +1,10 @@
 ---
-layout: single
+layout: post
 title: "Raw CNAPP Data: Why It Matters and the Future of Cloud Security Analytics"
 date: 2025-08-3
-permalink: /blog/raw-cnapp-data-access/
 categories: [security]
 tags: [cnapp, cloud-security, devsecops, snowflake, multi-cloud]
 excerpt: "Raw CNAPP exports can cut costs, speed compliance fixes, and accelerate breach response — if you control the query layer."
-toc: true
-toc_sticky: true
-author_profile: false
-read_time: true
-classes: [wide, xl]
 ---
 
 Security today is as much about **data operations** as it is about firewalls or policies. CNAPP platforms (Cloud-Native Application Protection Platforms) collect an enormous volume of telemetry from cloud environments — configurations, vulnerabilities, API calls, identity mappings, runtime events.

@@ -1,0 +1,36 @@
+<!-- Mermaid.js support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose',
+      fontFamily: '"PT Sans", sans-serif',
+      themeCSS: 'text { font-size: 0.9rem; }',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true,
+        curve: 'basis'
+      },
+      sequence: {
+        useMaxWidth: true,
+        height: 40,
+        actorMargin: 50,
+        boxMargin: 10,
+        boxTextMargin: 5,
+        noteMargin: 10,
+        messageMargin: 35,
+        mirrorActors: true,
+        bottomMarginAdj: 1,
+      },
+    });
+    
+    // Re-render Mermaid diagrams when tabs are shown
+    document.querySelectorAll('a[data-toggle="tab"]').forEach(tab => {
+      tab.addEventListener('shown.bs.tab', function() {
+        mermaid.init(undefined, '.language-mermaid');
+      });
+    });
+  });
+</script>

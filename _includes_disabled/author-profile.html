@@ -1,0 +1,148 @@
+{% include base_path %}
+
+{% if page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
+{% endif %}
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  <!-- Background gradient header -->
+  <div class="profile-background">
+    <div class="profile-gradient"></div>
+  </div>
+
+  <!-- Avatar section -->
+  <div class="author__avatar">
+    {% if author.avatar contains "://" %}
+    	<img src="{{ author.avatar }}" alt="{{ author.name }}" class="author__avatar">
+    {% else %}
+    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
+    {% endif %}
+  </div>
+
+  <!-- Profile content -->
+  <div class="author__content">
+    <h3 class="author__name">{{ author.name }}</h3>
+    {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
+
+    {% if author.bio %}
+      {% if page.url == "/" %}
+        <p class="author__bio">{{ author.bio }}</p>
+      {% else %}
+        <div class="profile-roles">
+          <span class="role-tag">Software Engineer</span>
+          <span class="role-tag">Security Architect</span>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  <!-- Social links section -->
+  <div class="author__urls-wrapper">
+    <h4 class="social-title">Connect</h4>
+    <ul class="author__urls social-icons">
+
+      <!-- Location and Employer -->
+      {% if author.location %}
+        <li class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>{{ author.location }}</span>
+        </li>
+      {% endif %}
+      {% if author.employer %}
+        <li class="info-item">
+          <i class="fas fa-fw fa-building-columns"></i>
+          <span>{{ author.employer }}</span>
+        </li>
+      {% endif %}
+
+      <!-- Primary Contact -->
+      {% if author.email %}
+        <li>
+          <a href="mailto:{{ author.email }}">
+            <i class="fas fa-fw fa-envelope"></i>
+            <span>Email</span>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.uri %}
+        <li>
+          <a href="{{ author.uri }}">
+            <i class="fas fa-fw fa-link"></i>
+            <span>Website</span>
+          </a>
+        </li>
+      {% endif %}
+
+      <!-- GitHub -->
+      {% if author.github %}
+        <li>
+          <a href="https://github.com/{{ author.github }}">
+            <i class="fab fa-fw fa-github"></i>
+            <span>GitHub</span>
+          </a>
+        </li>
+      {% endif %}
+
+      <!-- LinkedIn -->
+      {% if author.linkedin %}
+        <li>
+          <a href="https://www.linkedin.com/in/{{ author.linkedin }}">
+            <i class="fab fa-fw fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </li>
+      {% endif %}
+
+      <!-- Academic websites -->
+      {% if author.googlescholar %}
+        <li>
+          <a href="{{ author.googlescholar }}">
+            <i class="ai ai-google-scholar"></i>
+            <span>Google Scholar</span>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.orcid %}
+        <li>
+          <a href="{{ author.orcid }}">
+            <i class="ai ai-orcid ai-fw"></i>
+            <span>ORCID</span>
+          </a>
+        </li>
+      {% endif %}
+
+      <!-- Development platforms -->
+      {% if author.stackoverflow %}
+        <li>
+          <a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}">
+            <i class="fab fa-fw fa-stack-overflow"></i>
+            <span>Stack Overflow</span>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.kaggle %}
+        <li>
+          <a href="https://kaggle.com/{{ author.kaggle }}">
+            <i class="fab fa-fw fa-kaggle"></i>
+            <span>Kaggle</span>
+          </a>
+        </li>
+      {% endif %}
+
+      <!-- Social media (only popular ones) -->
+      {% if author.twitter %}
+        <li>
+          <a href="https://twitter.com/{{ author.twitter }}">
+            <i class="fab fa-fw fa-x-twitter"></i>
+            <span>Twitter</span>
+          </a>
+        </li>
+      {% endif %}
+
+    </ul>
+  </div>
+</div>

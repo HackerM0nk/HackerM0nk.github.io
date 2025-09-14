@@ -1,16 +1,10 @@
 ---
-layout: single
+layout: post
 title: "eBPF in Action: Service Mesh, Runtime Threat Detection, and API Defense"
 date: 2025-08-7
-permalink: /blog/ebpf-security-use-cases/
 categories: [security]
 tags: [ebpf, service-mesh, runtime-security, api-security, cilium]
 excerpt: "How eBPF enables sidecarless service meshes, real-time runtime threat detection, and API-level defenses directly in the kernel."
-toc: true
-toc_sticky: true
-author_profile: false
-read_time: true
-classes: [wide, xl]
 ---
 
 eBPF (extended Berkeley Packet Filter) has evolved from a packet filtering tool into a **programmable kernel runtime** that can observe, enforce, and transform network and system behavior without modifying applications or the kernel itself. For security engineers, this opens up an entirely new class of capabilities — particularly in **service mesh visibility, runtime threat detection, and API-level security**.

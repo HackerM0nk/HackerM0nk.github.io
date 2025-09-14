@@ -1,16 +1,10 @@
 ---
-layout: single
+layout: post
 title: "Architecting Security for Products & Distributed Platforms"
 date: 2025-08-15
-permalink: /blog/security-arch-review-threat-modeling/
 categories: [security]
 tags: [architecture-review, threat-modeling, risk-ranking, multi-cloud, devsecops]
 excerpt: "Threat Modeling for Products & Distributed Systems"
-toc: true
-toc_sticky: true
-author_profile: false
-read_time: true
-classes: [wide, xl]
 ---
 
 ## Introduction

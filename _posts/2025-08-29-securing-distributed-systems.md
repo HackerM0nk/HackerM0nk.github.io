@@ -1,16 +1,10 @@
 ---
-layout: single
+layout: post
 title: "Designing Security into Distributed Systems: A Friendly, Thorough Guide"
 date: 2025-08-19
-permalink: /blog/distributed-systems-security/
 categories: [security]
 tags: [distributed-systems, architecture, threat-modeling, devsecops, cloud, zero-trust, sdlc]
 excerpt: "What distributed systems are, why we build them, where the risks hide, and how to make security the default—explained crisply, like you and I are whiteboarding together."
-toc: true
-toc_sticky: true
-author_profile: false
-read_time: true
-classes: [wide, xl]
 ---
 
 > **Goal:** If you understand *why* a system is distributed, you can place the trust boundaries, anticipate the failure modes, and fit the right controls **before** bugs ship. This guide connects the dots between distributed systems and practical security engineering.
