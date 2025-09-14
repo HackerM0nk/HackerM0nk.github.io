@@ -8,7 +8,7 @@ permalink: /
 <section class="hero-improved">
   <div class="hero-content">
     <span class="pill mono">Software Engineering • Security • AI/ML • Distributed Systems</span>
-    <h1 class="h1">I build <em>secure platforms</em> so engineering teams move fast — <em>safely</em>.</h1>
+    <h1 class="h1">I build <em>secure platforms</em> so engineering teams move fast <em>safely</em></h1>
     <p class="lead">Full-stack platform security across any technology stack — from AI/ML pipelines to distributed systems, with enterprise-grade security by design.</p>
     <div class="cta">
       <a class="btn primary" href="#contact">Work with me</a>
@@ -39,6 +39,50 @@ permalink: /
       <div class="expertise-card">
         <div class="kpi">Distributed Systems</div>
         <div class="muted">Microservices, event-driven, multi-cloud, service mesh</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY APPROACH -->
+<section style="padding: 4rem 0; background: #f8f9fa;">
+  <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: #2c3e50; font-weight: 600;">Move fast. Stay secure.</h2>
+      <p style="font-size: 1.2rem; color: #4a5568; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+        I build security into the development lifecycle so teams can move fast without compromising safety. No security theater—just practical, automated guardrails that scale with your engineering velocity.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 800px; margin: 0 auto;">
+      <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #2c3e50; display: flex; align-items: center;">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: #4b6cb7; color: white; border-radius: 50%; margin-right: 1rem; font-size: 1rem;">1</span>
+          Secure by Default
+        </h3>
+        <p style="color: #4a5568; line-height: 1.6; margin: 0;">
+          Infrastructure as Code with built-in security controls. Automated policy enforcement that catches issues before they reach production.
+        </p>
+      </div>
+
+      <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #2c3e50; display: flex; align-items: center;">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: #4b6cb7; color: white; border-radius: 50%; margin-right: 1rem; font-size: 1rem;">2</span>
+          Developer Experience First
+        </h3>
+        <p style="color: #4a5568; line-height: 1.6; margin: 0;">
+          Security that works with your existing workflows. Fast feedback loops, clear error messages, and self-service tools that developers love.
+        </p>
+      </div>
+
+      <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #2c3e50; display: flex; align-items: center;">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: #4b6cb7; color: white; border-radius: 50%; margin-right: 1rem; font-size: 1rem;">3</span>
+          Continuous Assurance
+        </h3>
+        <p style="color: #4a5568; line-height: 1.6; margin: 0;">
+          Real-time visibility into your security posture. Automated testing, monitoring, and remediation that keeps pace with your deployments.
+        </p>
       </div>
     </div>
   </div>
