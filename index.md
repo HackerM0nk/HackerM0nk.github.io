@@ -50,7 +50,7 @@ permalink: /
     <div style="text-align: center; margin-bottom: 3rem;">
       <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: #2c3e50; font-weight: 600;">Move fast. Stay secure.</h2>
       <p style="font-size: 1.2rem; color: #4a5568; max-width: 800px; margin: 0 auto; line-height: 1.6;">
-        I build security into the development lifecycle so teams can move fast without compromising safety. No security theater—just practical, automated guardrails that scale with your engineering velocity.
+        <!-- I build security into the development lifecycle so teams can move fast without compromising safety. No security theater—just practical, automated guardrails that scale with your engineering velocity. -->
       </p>
     </div>
 
