@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+  <!-- SEO -->
+  {% if site.google_site_verification %}
+  <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+  {% endif %}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="/" class="title">{{ site.author.name }}</a>
+      </div>
+      <nav class="links">
+        <a class="btn" href="/about/">About</a>
+        <a class="btn" href="/blog/">Blog</a>
+        <a class="btn" href="/portfolio/">Portfolio</a>
+        <a class="btn" href="/books/">Books</a>
+        <a class="btn" href="/cv/">Resume</a>
+        <a class="btn" href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Portfolio Header -->
+    <section class="page-header">
+      <div class="page-header-content">
+        <h1 class="page-title">{{ page.title | default: "Portfolio" }}</h1>
+        <p class="page-subtitle">{% if page.description %}{{ page.description }}{% else %}Detailed case studies and technical deep-dives from enterprise security implementations{% endif %}</p>
+      </div>
+    </section>
+
+    <!-- Portfolio Content -->
+    <div class="portfolio-container">
+      {{ content }}
+    </div>
+
+    <footer>
+      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center">
+        <div>© <span id="year"></span> {{ site.author.name }}</div>
+        <div class="mono" style="color:var(--muted)">Built with Jekyll — Open Source</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

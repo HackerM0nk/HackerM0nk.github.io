@@ -1,55 +1,160 @@
-<!-- ---
-layout: cv
-title: Shivam Vaishampayan - CV -->
-
 ---
-title: "CV"
-layout: single
+layout: modern
+title: "Resume"
+description: "Professional experience in software engineering, security architecture, and distributed systems"
 permalink: /cv/
-author_profile: true
 ---
 
----
+<!-- CV Header -->
+<section class="cv-header">
+  <div class="cv-header-content">
+    <div class="cv-title">
+      <h1>Shivam Vaishampayan</h1>
+      <p class="cv-subtitle">Product Security Engineer & Software Architect</p>
+    </div>
+    <div class="cv-contact">
+      <div class="contact-item">
+        <span class="contact-icon">📧</span>
+        <a href="mailto:shivamvviiita@gmail.com">shivamvviiita@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">💼</span>
+        <a href="https://linkedin.com/in/shivamvv">linkedin.com/in/shivamvv</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">🔗</span>
+        <a href="https://github.com/HackerM0nk">github.com/HackerM0nk</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-# Shivam Vaishampayan  
-- **Email:** shivamvviiita@gmail.com  
-- **LinkedIn:** [linkedin.com/in/shivamvv](https://linkedin.com/in/shivamvv)  
-- **GitHub:** [HackerM0nk](https://github.com/HackerM0nk)  
+## Education
 
-## Education  
-### Indian Institute of Information Technology, Allahabad  
-**Bachelor of Technology in Electronics and Communication Engineering**  
-Aug 2018 – May 2022  
-CGPA: 8.34/10  
+<div class="cv-section">
+  <div class="education-item">
+    <div class="education-header">
+      <h3>Indian Institute of Information Technology, Allahabad</h3>
+      <div class="education-period">Aug 2018 – May 2022</div>
+    </div>
+    <div class="education-details">
+      <p class="degree">Bachelor of Technology in Electronics and Communication Engineering</p>
+      <!-- <p class="gpa">CGPA: 8.34/10</p> -->
+    </div>
+  </div>
+</div>
 
-## Technical Skills  
-- **Programming Languages:** C++, Python, Bash  
-- **Cloud Platforms & Tools:** AWS, Terraform, Kubernetes, Docker, Jenkins, Gitlab, Sourcegraph, Emissary Ingress, Paralus  
-- **Security Tools:** HashiCorp Vault, SonarQube, Renovate, Falco, Tetragon, HackerOne, PingSafe  
-- **Concepts:** Security Architecture, Threat Modeling, Vulnerability Management, Hardcoded Secrets Detection, eBPF-based Security, Infrastructure as Code (IaC)  
+## Technical Skills
 
-## Work Experience  
-### Sprinklr | Product Security Engineer  
-May 2023 – Present  
+<div class="skills-grid">
+  <div class="skill-category">
+    <h3>Programming Languages</h3>
+    <div class="skill-tags">
+      <span class="skill-tag">C++</span>
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Bash</span>
+      <span class="skill-tag">Go</span>
+    </div>
+  </div>
 
-- Conducted comprehensive **Security Architecture Reviews** for major products like **Sprinklr Insights, Sprinklr Community, and Sprinklr Service**.  
-- Designed and implemented an in-house **Bring Your Own Key (BYOK) initiative** from scratch.  
-- Led **CNAPP (Cloud-Native Application Protection Platform) vendor evaluation and onboarding projects**.  
-- Built automation pipelines using **Ansible, Terraform, and Kubernetes** for deployment processes and security controls.  
-- Implemented infrastructure security through RBAC, network segmentation, logging, and compliance policies.  
+  <div class="skill-category">
+    <h3>Cloud & Infrastructure</h3>
+    <div class="skill-tags">
+      <span class="skill-tag">AWS</span>
+      <span class="skill-tag">Terraform</span>
+      <span class="skill-tag">Kubernetes</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">Jenkins</span>
+      <span class="skill-tag">GitLab</span>
+    </div>
+  </div>
 
-### Urban Company | Core Platform & Product Security (SDE I)  
-Jan 2022 – May 2023  
+  <div class="skill-category">
+    <h3>Security Tools</h3>
+    <div class="skill-tags">
+      <span class="skill-tag">HashiCorp Vault</span>
+      <span class="skill-tag">SonarQube</span>
+      <span class="skill-tag">Falco</span>
+      <span class="skill-tag">Tetragon</span>
+      <span class="skill-tag">HackerOne</span>
+      <span class="skill-tag">PingSafe</span>
+    </div>
+  </div>
 
-- Developed Terraform modules for AWS VPC components and EKS clusters, migrating tools like ArgoCD, Jenkins, Kafka, Prometheus, and ELK.  
-- Implemented a **unique encryption key per PII data per user project (Crypto Shredding)**.  
-- Automated dependency updates and integrated security pipelines using SonarQube for 180+ repositories.  
-- Managed bug bounty programs through **HackerOne and PingSafe**, addressing issues such as dependency confusion, IDOR, and CSRF.  
-- Designed PoC setups of eBPF-based networking & security tools for observability and runtime security.  
+  <div class="skill-category">
+    <h3>Core Expertise</h3>
+    <div class="skill-tags">
+      <span class="skill-tag">Security Architecture</span>
+      <span class="skill-tag">Threat Modeling</span>
+      <span class="skill-tag">eBPF Security</span>
+      <span class="skill-tag">Infrastructure as Code</span>
+    </div>
+  </div>
+</div>
 
-## Certificates  
-- **OSCP** | Offensive Security Certified Professional (2021)  
-- **CRTE** | Certified Red Team Expert (2020)  
+## Professional Experience
+
+<div class="experience-timeline">
+  <div class="experience-item">
+    <div class="experience-header">
+      <div class="experience-title">
+        <h3>Product Security Engineer</h3>
+        <p class="company">Sprinklr</p>
+      </div>
+      <div class="experience-period">May 2023 – Present</div>
+    </div>
+    <div class="experience-content">
+      <ul class="experience-highlights">
+        <li>Conducted comprehensive <strong>Security Architecture Reviews</strong> for major products like <strong>Sprinklr Insights, Sprinklr Community, and Sprinklr Service</strong></li>
+        <li>Designed and implemented an in-house <strong>Bring Your Own Key (BYOK) initiative</strong> from scratch</li>
+        <li>Led <strong>CNAPP (Cloud-Native Application Protection Platform)</strong> vendor evaluation and onboarding projects</li>
+        <li>Built automation pipelines using <strong>Ansible, Terraform, and Kubernetes</strong> for deployment processes and security controls</li>
+        <li>Implemented infrastructure security through RBAC, network segmentation, logging, and compliance policies</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="experience-item">
+    <div class="experience-header">
+      <div class="experience-title">
+        <h3>Core Platform & Product Security (SDE I)</h3>
+        <p class="company">Urban Company</p>
+      </div>
+      <div class="experience-period">Jan 2022 – May 2023</div>
+    </div>
+    <div class="experience-content">
+      <ul class="experience-highlights">
+        <li>Developed Terraform modules for AWS VPC components and EKS clusters, migrating tools like ArgoCD, Jenkins, Kafka, Prometheus, and ELK</li>
+        <li>Implemented a <strong>unique encryption key per PII data per user project (Crypto Shredding)</strong></li>
+        <li>Automated dependency updates and integrated security pipelines using SonarQube for 180+ repositories</li>
+        <li>Managed bug bounty programs through <strong>HackerOne and PingSafe</strong>, addressing issues such as dependency confusion, IDOR, and CSRF</li>
+        <li>Designed PoC setups of eBPF-based networking & security tools for observability and runtime security</li>
+      </ul>
+    </div>
+  </div>
+</div>  
+
+## Certifications
+
+<div class="certifications-grid">
+  <div class="certification-card">
+    <div class="cert-icon">🛡️</div>
+    <div class="cert-content">
+      <h3>OSCP</h3>
+      <p class="cert-full">Offensive Security Certified Professional</p>
+      <p class="cert-year">2021</p>
+    </div>
+  </div>
+
+  <div class="certification-card">
+    <div class="cert-icon">🎯</div>
+    <div class="cert-content">
+      <h3>CRTE</h3>
+      <p class="cert-full">Certified Red Team Expert</p>
+      <p class="cert-year">2020</p>
+    </div>
+  </div>
+</div>  
 
 ## Achievements & Recognition
 
@@ -139,7 +244,14 @@ Jan 2022 – May 2023
   </div>
 </div>  
 
-## Leadership  
-- **Lead Organizer** - Hack In The North, IIIT-A (Aug 2020 – Aug 2021)  
+## Leadership
 
----
+<div class="leadership-section">
+  <div class="leadership-item">
+    <div class="leadership-role">
+      <h3>Lead Organizer</h3>
+      <p class="leadership-event">Hack In The North, IIIT-A</p>
+    </div>
+    <div class="leadership-period">Aug 2020 – Aug 2021</div>
+  </div>
+</div>

@@ -1,16 +1,10 @@
 ---
-layout: single
+layout: post
 title: "BYOK and Crypto Shredding for Compliance-Driven Data Protection"
 date: 2025-08-14
-permalink: /blog/byok-crypto-shredding-architecture/
 categories: [security, architecture, encryption, compliance]
 tags: [BYOK, crypto-shredding, encryption, key-management, compliance, gdpr, hipaa]
 excerpt: "An architect’s blueprint for implementing Bring Your Own Key (BYOK) and Crypto Shredding to meet stringent security and compliance requirements."
-toc: true
-toc_sticky: true
-author_profile: false
-read_time: true
-classes: [wide, xl]
 ---
 
 ## Introduction

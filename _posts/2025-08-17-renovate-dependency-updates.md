@@ -1,16 +1,10 @@
 ---
-layout: single
+layout: post
 title: "Eliminating Tech Debt: Automated Dependency Updates & Code Refactoring"
 date: 2025-08-15
-permalink: /blog/gitlab-renovate-openrewrite/
 categories: [security, devsecops, automation]
 tags: [gitlab, renovate, openrewrite, dependency-management]
 excerpt: "Renovate and OpenRewrite"
-toc: true
-toc_sticky: true
-author_profile: false
-read_time: true
-classes: [wide, xl]
 ---
 
 Keeping base images and application dependencies fresh is a never-ending chore.  

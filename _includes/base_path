@@ -1,5 +1,17 @@
+{% comment %}
+<!-- _includes/base_path -->
+<!-- This file is deprecated by the Minimal Mistakes community -->
+<!-- Use relative_url and absolute_url liquid filters instead -->
+{% endcomment %}
+
+{% assign base_path = "" %}
+{% if site.baseurl %}
+  {% assign base_path = site.baseurl %}
+{% endif %}
 {% if site.url %}
-  {% assign base_path = site.url | append: site.baseurl %}
-{% else %}
-  {% assign base_path = site.github.url %}
+  {% if site.baseurl %}
+    {% assign base_path = site.url | append: site.baseurl %}
+  {% else %}
+    {% assign base_path = site.url %}
+  {% endif %}
 {% endif %}

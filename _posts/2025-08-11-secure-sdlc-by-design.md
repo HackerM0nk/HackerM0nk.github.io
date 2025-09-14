@@ -1,16 +1,10 @@
 ---
-layout: single
+layout: post
 title: "Defense in Depth for Cloud Native Infrastructure"
 date: 2025-08-17
-permalink: /blog/secure-sdlc-by-design/
 categories: [security]
 tags: [secure-by-design, sdlc, devsecops, cloud, kubernetes, cnapp, ebpf]
 excerpt: "Code → Container → Compute → Cluster → Cloud → CDN"
-toc: true
-toc_sticky: true
-author_profile: false
-read_time: true
-classes: ["wide", "xl"]
 # header:
 #   overlay_color: "#0b132b"
 #   overlay_filter: "0.45"

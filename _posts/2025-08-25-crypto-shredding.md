@@ -1,17 +1,11 @@
 ---
 
-layout: single
+layout: post
 title: "Crypto-Shredding in Practice: Field-Level Encryption with Vault Transit at Scale"
 date: 2025-08-29
-permalink: /blog/crypto-shredding-with-vault-transit/
 categories: [security]
 tags: [data-security, vault, transit, crypto-shredding, nodejs, nosql, privacy, encryption]
 excerpt: "A candid build-and-ship story: why we moved to field-level encryption, how Transit fits, the migration that didn’t melt the pager, and the outage that made us harden everything."
-toc: true
-toc_sticky: true
-author_profile: false
-read_time: true
-classes: [wide, xl]
 ---
 
 > **TL;DR** — We stopped letting databases hold our secrets in plaintext and made services encrypt fields **before** they touch storage. We used **HashiCorp Vault Transit** (no keys in apps), scoped keys so we can **crypto-shred** on demand, migrated live traffic with **dual-writes** + a **backfill**, and then—after an ugly incident—added **circuit breakers, short-TTL caches for low-sensitivity fields, and graceful degradation**. Now “delete” means “no one can decrypt,” not “we hope replicas and backups agree.”

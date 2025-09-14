@@ -1,16 +1,10 @@
 ---
-layout: single
+layout: post
 title: "Securing Multi-Cloud Networks: From Immediate Controls to Zero Trust"
 date: 2025-08-15
-permalink: /blog/multi-cloud-network-security-strategy/
 categories: [security]
 tags: [multi-cloud, network-security, cloudsec, automation, zero-trust]
 excerpt: "A phased, product-centric approach to securing multi-cloud network — from immediate threat mitigation to zero trust adoption."
-toc: true
-toc_sticky: true
-author_profile: false
-read_time: true
-classes: [wide, xl]
 ---
 
 This document provides a detailed strategy to assess, secure, and future-proof multi-cloud distributed infrastructure. The focus is on addressing external threats, evaluating current and emerging network patterns, and providing actionable guidance for improving security through automation and structured guidelines.

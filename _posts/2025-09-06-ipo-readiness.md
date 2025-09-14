@@ -1,17 +1,10 @@
 ---
-layout: single
+layout: post
 title: "IPO-Ready Security for Distributed Systems: A Friendly, Thorough Guide"
-date: 2025-09-07
-permalink: /blog/ipo-ready-security/
-categories: [security]
+date: 2025-09-06
+categories: [security, architecture]
 tags: [distributed-systems, architecture, threat-modeling, devsecops, cloud, zero-trust, sdlc, ipo]
 excerpt: "A crisp, hands-on playbook to make security the default across web, mobile, APIs, and cloud—built for a Node on ECS + middleware on EKS stack—and to spot issues before bug hunters do."
-toc: true
-toc_sticky: true
-author_profile: false
-read_time: true
-mermaid: true
-classes: [wide, xl]
 ---
 
 > *Context*: A VP of Platform Engineering asked, “How do we make our platform **IPO-ready**—fast, without fluff?”  

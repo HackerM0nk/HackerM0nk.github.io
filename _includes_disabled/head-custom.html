@@ -1,0 +1,118 @@
+<!-- Mermaid.js support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+  // Simple Mermaid initialization
+  (function() {
+    // Wait for the document to be fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMermaid);
+    } else {
+      // If the document is already loaded, run immediately
+      setTimeout(initMermaid, 0);
+    }
+
+    function initMermaid() {
+      try {
+        console.log('Initializing Mermaid...');
+        
+        // Initialize Mermaid with default configuration
+        mermaid.initialize({
+          startOnLoad: true,
+          theme: 'default',
+          securityLevel: 'loose',
+          fontFamily: '"PT Sans", sans-serif',
+          themeCSS: 'text { font-size: 0.9rem; }',
+          flowchart: {
+            useMaxWidth: true,
+            htmlLabels: true,
+            curve: 'basis'
+          },
+          sequence: {
+            useMaxWidth: true,
+            height: 40,
+            actorMargin: 50,
+            boxMargin: 10,
+            boxTextMargin: 5,
+            noteMargin: 10,
+            messageMargin: 35,
+            mirrorActors: true,
+            bottomMarginAdj: 1,
+          },
+        });
+        
+        // Process all Mermaid code blocks
+        const mermaidElements = document.querySelectorAll('code.language-mermaid');
+        console.log(`Found ${mermaidElements.length} Mermaid diagrams`);
+        
+        mermaidElements.forEach((el, index) => {
+          try {
+            const parent = el.parentElement;
+            if (parent && parent.tagName === 'PRE') {
+              // Create a container for the diagram
+              const container = document.createElement('div');
+              container.className = 'mermaid';
+              container.textContent = el.textContent;
+              
+              // Replace the pre element with our container
+              parent.parentNode.replaceChild(container, parent);
+              
+              console.log(`Processed Mermaid diagram #${index + 1}`);
+            }
+          } catch (e) {
+            console.error(`Error processing Mermaid diagram #${index + 1}:`, e);
+          }
+        });
+        
+        // Initialize Mermaid
+        console.log('Initializing Mermaid rendering...');
+        mermaid.init(undefined, '.mermaid');
+        console.log('Mermaid initialization complete');
+        
+      } catch (e) {
+        console.error('Error initializing Mermaid:', e);
+      }
+    }
+  })();
+</script>
+
+<style>
+  /* Style for Mermaid diagrams */
+  .mermaid {
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 20px 0;
+    overflow: auto;
+    text-align: center;
+  }
+  
+  /* Ensure code blocks inside Mermaid diagrams are visible */
+  .mermaid code {
+    background: transparent !important;
+    padding: 0 !important;
+    font-family: 'PT Sans', sans-serif !important;
+  }
+  
+  /* Fix for Mermaid diagrams in dark mode */
+  [data-theme='dark'] .mermaid {
+    background: #2d2d2d;
+    color: #f0f0f0;
+  }
+  
+  [data-theme='dark'] .mermaid .node rect,
+  [data-theme='dark'] .mermaid .node circle,
+  [data-theme='dark'] .mermaid .node polygon,
+  [data-theme='dark'] .mermaid .node path {
+    fill: #2d2d2d;
+    stroke: #f0f0f0;
+  }
+  
+  [data-theme='dark'] .mermaid .edgePath path {
+    stroke: #f0f0f0;
+    stroke-width: 1.5px;
+  }
+  
+  [data-theme='dark'] .mermaid .node text {
+    fill: #f0f0f0;
+  }
+</style>

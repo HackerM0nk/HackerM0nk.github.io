@@ -1,0 +1,532 @@
+---
+layout: default
+---
+
+<style>
+  :root {
+    /* easy to retheme */
+    --bg: #0b0b10;            /* page background */
+    --panel: #11131a;         /* card background */
+    --ink: #e8ecf1;           /* primary text */
+    --sub: #b7c1cd;           /* secondary text */
+    --muted: #7b8594;         /* tertiary text */
+    --brand: #8be9fd;         /* accent cyan */
+    --brand-2: #a78bfa;       /* accent purple */
+    --ring: rgba(139,233,253,.4);
+    --ok: #34d399; 
+    --warn: #fbbf24; 
+    --bad: #f97316;
+    --radius: 16px;
+    --gap: 18px;
+    --shadow: 0 10px 30px rgba(0,0,0,.25);
+    --max: 1024px;
+  }
+
+  * { box-sizing: border-box; }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(1200px 800px at 90% -10%, rgba(167,139,250,.08), rgba(167,139,250,0)),
+                radial-gradient(1000px 600px at -10% 10%, rgba(139,233,253,.08), rgba(139,233,253,0)), 
+                var(--bg);
+    color: var(--ink); 
+    font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    letter-spacing: .2px;
+  }
+
+  a { 
+    color: var(--ink); 
+    text-decoration: none;
+  }
+  
+  a:hover { 
+    color: var(--brand);
+  }
+  
+  .wrap { 
+    max-width: var(--max); 
+    margin: 0 auto; 
+    padding: 0 24px;
+  }
+  
+  header {
+    position: sticky; 
+    top: 0; 
+    z-index: 20; 
+    backdrop-filter: blur(6px); 
+    background: rgba(11,11,16,.65); 
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  
+  .nav {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 14px 0;
+  }
+  
+  .nav .brand {
+    display: flex; 
+    gap: 12px; 
+    align-items: center;
+  }
+  
+  .logo {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%; 
+    background: linear-gradient(135deg, var(--brand), var(--brand-2)); 
+    box-shadow: 0 0 0 3px rgba(255,255,255,.06);
+  }
+  
+  .brand .title {
+    font-weight: 700; 
+    letter-spacing: .3px;
+  }
+  
+  .links {
+    display: flex; 
+    gap: 16px; 
+    align-items: center;
+  }
+  
+  .btn {
+    display: inline-flex; 
+    align-items: center; 
+    gap: 8px; 
+    padding: 10px 14px; 
+    border-radius: 12px; 
+    border: 1px solid rgba(255,255,255,.1); 
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0)); 
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    transition: all 0.2s ease;
+  }
+  
+  .btn:hover {
+    border-color: rgba(255,255,255,.2);
+    transform: translateY(-1px);
+  }
+
+  /* hero */
+  .hero {
+    display: grid; 
+    grid-template-columns: 1.2fr .8fr; 
+    gap: 32px; 
+    align-items: center; 
+    padding: 56px 0;
+  }
+  
+  .pill {
+    display: inline-flex; 
+    gap: 8px; 
+    align-items: center; 
+    border: 1px solid rgba(255,255,255,.12); 
+    padding: 6px 10px; 
+    border-radius: 999px; 
+    color: var(--sub); 
+    font-size: 12px;
+  }
+  
+  .h1 {
+    font-size: 42px; 
+    line-height: 1.15; 
+    margin: 14px 0; 
+    font-weight: 800;
+  }
+  
+  .lead {
+    color: var(--sub); 
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  
+  .cta {
+    display: flex; 
+    gap: 12px; 
+    margin-top: 20px;
+  }
+  
+  .cta .primary {
+    background: linear-gradient(135deg, var(--brand), var(--brand-2)); 
+    color: #0b0b10; 
+    font-weight: 700; 
+    border: 0;
+  }
+
+  .statbar {
+    display: flex; 
+    gap: 12px; 
+    margin-top: 18px; 
+    flex-wrap: wrap;
+  }
+  
+  .chip {
+    padding: 6px 10px; 
+    border-radius: 10px; 
+    background: rgba(255,255,255,.05); 
+    border: 1px solid rgba(255,255,255,.06); 
+    color: var(--muted); 
+    font-size: 12px;
+  }
+
+  .card {
+    background: var(--panel); 
+    border: 1px solid rgba(255,255,255,.06); 
+    border-radius: var(--radius); 
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  }
+
+  /* grids */
+  .grid {
+    display: grid; 
+    gap: var(--gap);
+  }
+  
+  .cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  section {
+    padding: 26px 0;
+  }
+  
+  section h2 {
+    margin: 0 0 10px; 
+    font-size: 20px; 
+    letter-spacing: .3px; 
+    color: var(--sub);
+  }
+  
+  section h3 {
+    margin: 8px 0 6px; 
+    font-size: 16px;
+  }
+  
+  .card .inner {
+    padding: 18px;
+  }
+  
+  .badge {
+    display: inline-block; 
+    padding: 3px 8px; 
+    border-radius: 8px; 
+    border: 1px solid rgba(255,255,255,.12); 
+    color: var(--muted); 
+    font-size: 12px;
+  }
+  
+  .kpi {
+    font: 600 22px/1 Inter; 
+    letter-spacing: .3px;
+  }
+
+  /* list aesthetics */
+  .clean-list {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px;
+  }
+  
+  .clean-list li {
+    padding: 6px 10px; 
+    border-radius: 10px; 
+    background: rgba(255,255,255,.05); 
+    border: 1px solid rgba(255,255,255,.06); 
+    color: var(--muted); 
+    font-size: 13px;
+  }
+
+  footer {
+    margin-top: 36px; 
+    padding: 26px 0; 
+    border-top: 1px solid rgba(255,255,255,.06); 
+    color: var(--muted);
+  }
+  
+  .mono {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+  
+  .muted {
+    color: var(--muted);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+    
+    .cols-3, .cols-2 {
+      grid-template-columns: 1fr;
+    }
+    
+    .h1 {
+      font-size: 32px;
+    }
+    
+    .cta {
+      flex-direction: column;
+    }
+    
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .nav {
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px 0;
+    }
+    
+    .links {
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div class="title">{{ site.title | default: site.github.owner_name }}</div>
+    </div>
+    <nav class="links">
+      <a class="btn" href="#work">Work</a>
+      <a class="btn" href="#writing">Writing</a>
+      <a class="btn" href="#talks">Talks</a>
+      <a class="btn" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <span class="pill mono">Security • Cloud • DevSecOps</span>
+      <h1 class="h1">I design and secure <em>enterprise-grade</em> systems that are <em>reliable</em>, <em>scalable</em>, and <em>secure</em>.</h1>
+      <p class="lead">Security Engineer & Architect with deep expertise in Cloud Infrastructure, DevSecOps, and enterprise-grade solutions. I transform security challenges in complex systems into robust, secure platforms that scale.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn" href="{{ '/files/Shivam\'s_Resume.pdf' | relative_url }}">View Resume</a>
+      </div>
+      <div class="statbar">
+        <span class="chip">→ Cloud Security</span>
+        <span class="chip">→ DevSecOps & Automation</span>
+        <span class="chip">→ Enterprise Architecture</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="inner">
+        <div class="badge">Highlights</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:10px">
+          <div class="card" style="border:1px dashed rgba(255,255,255,.1)">
+            <div class="inner">
+              <div class="kpi">Cloud Security</div>
+              <div class="muted">Multi-cloud security architecture & implementation</div>
+            </div>
+          </div>
+          <div class="card" style="border:1px dashed rgba(255,255,255,.1)">
+            <div class="inner">
+              <div class="kpi">DevSecOps</div>
+              <div class="muted">Secure CI/CD pipelines & automation</div>
+            </div>
+          </div>
+          <div class="card" style="border:1px dashed rgba(255,255,255,.1)">
+            <div class="inner">
+              <div class="kpi">Architecture</div>
+              <div class="muted">Scalable & secure system design</div>
+            </div>
+          </div>
+          <div class="card" style="border:1px dashed rgba(255,255,255,.1)">
+            <div class="inner">
+              <div class="kpi">Compliance</div>
+              <div class="muted">SOC 2, ISO 27001, GDPR, HIPAA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP / LOGOS -->
+  <section aria-label="as seen on">
+    <div class="card">
+      <div class="inner" style="display:flex; gap:26px; flex-wrap:wrap; align-items:center; justify-content:space-between">
+        <span class="mono" style="color:var(--muted)">Expertise →</span>
+        <span class="badge">Cloud Security</span>
+        <span class="badge">DevSecOps</span>
+        <span class="badge">Enterprise Architecture</span>
+        <span class="badge">Compliance</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK / PROJECTS -->
+  <section id="work">
+    <h2>Selected Work</h2>
+    <div class="grid cols-3">
+      <article class="card">
+        <div class="inner">
+          <h3>Secure SDLC Implementation</h3>
+          <p class="muted">End-to-end secure software development lifecycle with automated security gates and compliance checks.</p>
+          <ul class="clean-list">
+            <li>CI/CD</li>
+            <li>SAST/DAST</li>
+            <li>Compliance</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card">
+        <div class="inner">
+          <h3>Multi-Cloud Security</h3>
+          <p class="muted">Unified security controls and monitoring across AWS, GCP, and Azure environments.</p>
+          <ul class="clean-list">
+            <li>AWS</li>
+            <li>GCP</li>
+            <li>Azure</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card">
+        <div class="inner">
+          <h3>Zero Trust Architecture</h3>
+          <p class="muted">Implemented zero trust security model with identity-aware proxies and microsegmentation.</p>
+          <ul class="clean-list">
+            <li>Zero Trust</li>
+            <li>IAM</li>
+            <li>Microsegmentation</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <h2>Latest Writing</h2>
+    <div class="grid cols-2">
+      {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+      {% for post in sorted_posts limit:2 %}
+      <article class="card">
+        <div class="inner">
+          <h3>{{ post.title }}</h3>
+          <p class="muted">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+          <a class="btn" href="{{ post.url | relative_url }}">Read →</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- TALKS -->
+  <section id="talks">
+    <h2>Talks & Teaching</h2>
+    <div class="card">
+      <div class="inner">
+        <ul class="clean-list">
+          {% for talk in site.talks limit:3 %}
+            <li>{{ talk.title }} — {{ talk.venue }}</li>
+          {% else %}
+            <li>Keynote — "Modern Cloud Security Architecture"</li>
+            <li>Workshop — "Practical DevSecOps Implementation"</li>
+            <li>Guest lecture — "Enterprise Security Best Practices"</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <div class="card">
+      <div class="inner">
+        <p class="muted">Feel free to reach out for consulting, speaking engagements, or just to discuss security and technology.</p>
+        <div class="cta" style="margin-top: 20px;">
+          <a class="btn" href="mailto:{{ site.email | default: 'your.email@example.com' }}">Email Me</a>
+          <a class="btn" href="https://linkedin.com/in/{{ site.linkedin_username | default: 'yourusername' }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/{{ site.github_username | default: 'yourusername' }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <div>© <span id="year"></span> {{ site.title | default: site.github.owner_name }}</div>
+      <div class="mono" style="color:var(--muted)">Built with Jekyll & ♥</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80, // Adjust for fixed header
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // Add active class to current section in navigation
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.links a');
+  
+  window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      
+      if (window.scrollY >= (sectionTop - 100)) {
+        current = '#' + section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
