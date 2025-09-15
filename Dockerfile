@@ -13,8 +13,11 @@ WORKDIR /usr/src/app
 # Copy Gemfile for dependency installation
 COPY Gemfile ./
 
-# Install bundler and dependencies
-RUN gem install bundler:2.4.19 && bundle install
+# Install bundler and clear any existing bundle config
+RUN gem install bundler:2.4.19 && \
+    bundle config --delete path && \
+    bundle config --delete without && \
+    bundle install --retry 3
 
 # Copy the entire site into the container
 COPY . .
@@ -23,5 +26,5 @@ COPY . .
 EXPOSE 4000
 
 # Command to serve the Jekyll site
-CMD ["bundle", "exec", "jekyll", "serve", "-H", "0.0.0.0", "-w", "--config", "_config.yml,_config_docker.yml"]
+CMD ["bundle", "exec", "jekyll", "serve", "-H", "0.0.0.0", "-w"]
 

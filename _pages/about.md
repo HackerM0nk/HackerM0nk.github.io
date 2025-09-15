@@ -67,36 +67,23 @@ permalink: /about/
 
 ## Beyond Work
 
-<div class="beyond-work-grid">
-  <div class="beyond-card reading">
-    <div class="beyond-icon">📚</div>
-    <div class="beyond-content">
+<div class="beyond-work-clean">
+  <div class="beyond-section">
+    <div class="beyond-header">
+      <span class="beyond-marker">📚</span>
       <h3>Intellectual Pursuits</h3>
-      <p>I'm a <strong>bibliophile</strong> drawn to Ancient History, Classic Literature, Mathematics, Psychology, and Systems Thinking.</p>
-      <div class="book-shelf">
-        <span class="book-spine ancient">Thucydides</span>
-        <span class="book-spine literature">Dostoevsky</span>
-        <span class="book-spine tech">CLRS</span>
-        <span class="book-spine cs">SICP</span>
-        <span class="book-spine philosophy">GEB</span>
-      </div>
-      <p class="book-wisdom">Reminders that patterns repeat and feedback loops decide what endures.</p>
     </div>
+    <p class="beyond-description">I'm a <strong>bibliophile</strong> drawn to Ancient History, Classic Literature, Mathematics, Psychology, and Systems Thinking. From Thucydides to Dostoevsky, from CLRS to SICP, from GEB to modern systems theory—reminders that patterns repeat and feedback loops decide what endures.</p>
   </div>
 
-  <div class="beyond-card fitness">
-    <div class="beyond-icon">💪</div>
-    <div class="beyond-content">
+  <div class="beyond-divider"></div>
+
+  <div class="beyond-section">
+    <div class="beyond-header">
+      <span class="beyond-marker">💪</span>
       <h3>Physical Discipline</h3>
-      <p>Regular workouts keep me disciplined: <strong>football, gym training, long walks and rides</strong>.</p>
-      <div class="fitness-activities">
-        <span class="activity-tag">⚽ Football</span>
-        <span class="activity-tag">🏋️ Gym Training</span>
-        <span class="activity-tag">🚶 Long Walks</span>
-        <span class="activity-tag">🚴 Rides</span>
-      </div>
-      <p class="fitness-wisdom">Pacing and recovery matter in bodies and in systems; both reward consistency over theatrics.</p>
     </div>
+    <p class="beyond-description">Regular movement keeps me disciplined: <strong>football, gym training, long walks and rides</strong>. Pacing and recovery matter in bodies and in systems; both reward consistency over theatrics.</p>
   </div>
 </div>
 
