@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Musings on Antifragile — Dancing in the Storm"
+title: "Musings on Antifragile"
 date: 2025-09-14
 categories: [books, philosophy, resilience]
 tags: [book-review, nassim-taleb, antifragility, philosophy, systems-thinking, life-lessons]

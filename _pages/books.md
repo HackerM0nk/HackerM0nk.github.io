@@ -27,7 +27,7 @@ permalink: /books/
 
   <div class="review-card">
     <div class="review-header">
-      <h3><a href="/2025/09/14/antifragile-musings/">Musings on Antifragile — Dancing in the Storm</a></h3>
+      <h3><a href="/2025/09/14/antifragile-musings/">Musings on Antifragile</a></h3>
       <div class="review-meta">
         <span class="review-author">Nassim Nicholas Taleb</span>
         <span class="review-rating">★★★★★</span>

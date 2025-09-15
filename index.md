@@ -5,84 +5,66 @@ permalink: /
 ---
 
 <!-- HERO -->
-<section class="hero-improved">
-  <div class="hero-content">
-    <span class="pill mono">Software Engineering • Security • AI/ML • Distributed Systems</span>
-    <h1 class="h1">I build <em>secure platforms</em> so engineering teams move fast <em>safely</em></h1>
-    <p class="lead">Full-stack platform security across any technology stack — from AI/ML pipelines to distributed systems, with enterprise-grade security by design.</p>
+<section class="hero-single">
+  <div class="hero-intro">
+    <span class="greeting">HELLO 👋</span>
+    <h1 class="h1">I'm a Software Security Engineer focused on securing <em>Platforms</em> and <em> Products</em></h1>
+    <p class="lead">Security isn't a side quest—it's part of how we build. I lean on code and IaC as the ground truth, use sensible defaults, and track a few meaningful signals. The aim: make the right thing easy and drift impossible to miss.</p>
     <div class="cta">
-      <a class="btn primary" href="#contact">Work with me</a>
-      <a class="btn" href="/about/">About me</a>
-      <a class="btn" href="#work">View projects</a>
-    </div>
-    <div class="statbar">
-      <span class="chip">→ 25+ cloud accounts secured</span>
-      <span class="chip">→ AI/ML security pipelines</span>
-      <span class="chip">→ Distributed systems hardening</span>
-    </div>
-  </div>
-  <div class="hero-expertise">
-    <div class="badge">Core Expertise</div>
-    <div class="expertise-grid">
-      <div class="expertise-card">
-        <div class="kpi">Software Engineering</div>
-        <div class="muted">Building resilient systems from idea to production scale</div>
-      </div>
-      <div class="expertise-card">
-        <div class="kpi">Security</div>
-        <div class="muted">Threat modeling, zero-trust architecture, runtime protection</div>
-      </div>
-      <div class="expertise-card">
-        <div class="kpi">AI/ML Systems</div>
-        <div class="muted">Securing machine learning pipelines and LLM deployments</div>
-      </div>
-      <div class="expertise-card">
-        <div class="kpi">Distributed Systems</div>
-        <div class="muted">Microservices, event-driven, multi-cloud, service mesh</div>
-      </div>
+      <a class="btn" href="/about/">About</a>
+      <a class="btn" href="#work">Technical work</a>
+      <a class="btn" href="#contact">Contact</a>
     </div>
   </div>
 </section>
 
+<!-- WHAT I DO -->
+<section>
+  <h2>What I Do</h2>
+  <div class="executive-summary">
+    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--sub); margin: 0;">I'm a software security engineer who builds security into how cloud-native systems are designed, built, shipped, and run. My bias: security should feel like part of engineering—not a separate lane. I treat application code and IaC as the source of truth, set sane defaults, and measure the few signals that actually show whether we're safe and compliant. The goal is simple: make the secure path the easy path, and make drift obvious.</p>
+  </div>
+</section>
+
 <!-- SECURITY APPROACH -->
-<section style="padding: 4rem 0; background: #f8f9fa;">
-  <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-    <div style="text-align: center; margin-bottom: 3rem;">
-      <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: #2c3e50; font-weight: 600;">Move fast. Stay secure.</h2>
-      <p style="font-size: 1.2rem; color: #4a5568; max-width: 800px; margin: 0 auto; line-height: 1.6;">
-        I build security into the development lifecycle so teams can move fast without compromising safety. No security theater—just practical, automated guardrails that scale with your engineering velocity.
+<section class="section-accent">
+  <div class="wrap">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <h2>How I approach security</h2>
+      <p class="lead" style="max-width: 800px; margin: 16px auto 0; font-size: 1.2rem; text-align: center;">
+        Security problems are engineering problems. Build it into the system from the start, measure what matters, and make the right choices obvious.
       </p>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 800px; margin: 0 auto;">
-      <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #2c3e50; display: flex; align-items: center;">
-          <span style="display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: #4b6cb7; color: white; border-radius: 50%; margin-right: 1rem; font-size: 1rem;">1</span>
-          Secure by Default
-        </h3>
-        <p style="color: #4a5568; line-height: 1.6; margin: 0;">
-          Infrastructure as Code with built-in security controls. Automated policy enforcement that catches issues before they reach production.
-        </p>
+    <div class="grid" style="grid-template-columns: 1fr; gap: 24px; max-width: 900px;">
+      <div class="card">
+        <div class="inner">
+          <h3 style="display: flex; align-items: center; gap: 16px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--brand); color: white; border-radius: 50%; font-size: 0.9rem; font-weight: 600;">1</span>
+            Code as Source of Truth
+          </h3>
+          <p>Your application code and infrastructure definitions are the only reliable source of what's actually running. Configuration management tools lie, documentation goes stale, but the code doesn't.</p>
+        </div>
       </div>
 
-      <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #2c3e50; display: flex; align-items: center;">
-          <span style="display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: #4b6cb7; color: white; border-radius: 50%; margin-right: 1rem; font-size: 1rem;">2</span>
-          Developer Experience First
-        </h3>
-        <p style="color: #4a5568; line-height: 1.6; margin: 0;">
-          Security that works with your existing workflows. Fast feedback loops, clear error messages, and self-service tools that developers love.
-        </p>
+      <div class="card">
+        <div class="inner">
+          <h3 style="display: flex; align-items: center; gap: 16px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--brand); color: white; border-radius: 50%; font-size: 0.9rem; font-weight: 600;">2</span>
+            Secure Paved Paths
+          </h3>
+          <p>If the secure approach is harder than the insecure one, people will take shortcuts. Build security into the tools and workflows engineers already use every day.</p>
+        </div>
       </div>
 
-      <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #2c3e50; display: flex; align-items: center;">
-          <span style="display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: #4b6cb7; color: white; border-radius: 50%; margin-right: 1rem; font-size: 1rem;">3</span>
-          Continuous Assurance
-        </h3>
-        <p style="color: #4a5568; line-height: 1.6; margin: 0;">
-          Real-time visibility into your security posture. Automated testing, monitoring, and remediation that keeps pace with your deployments.
-        </p>
+      <div class="card">
+        <div class="inner">
+          <h3 style="display: flex; align-items: center; gap: 16px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--brand); color: white; border-radius: 50%; font-size: 0.9rem; font-weight: 600;">3</span>
+            Build Systems with Runtime Security
+          </h3>
+          <p>Things will break and attacks will happen. Design systems that fail safely, detect problems quickly, and give you the data you need to understand what went wrong.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -90,61 +72,102 @@ permalink: /
 
 <!-- EXECUTIVE SUMMARY -->
 <section>
-  <h2>Executive Summary</h2>
-  <div class="card">
-    <div class="inner">
-      <p>I'm a systems & platform security engineer who designs and ships security controls that become the de facto developer experience. I align security with product velocity by treating code & IaC as source-of-truth, automating policy enforcement, and turning ad-hoc fixes into platform-level guardrails that measurably reduce risk and developer friction.</p>
-    </div>
+  <h2>What I Do</h2>
+  <div class="executive-summary">
+    <p style="font-size: 1.2rem; line-height: 1.7; color: var(--sub); margin: 0; text-align: center;">Security architecture for distributed systems, with emphasis on design patterns that scale with engineering velocity. Focus on measurable controls, infrastructure as code, and operational practices that make security failures observable and correctable.</p>
   </div>
 </section>
 
 <!-- TRUST STRIP -->
-<section aria-label="experience">
-  <div class="card">
-    <div class="inner" style="display:flex; gap:26px; flex-wrap:wrap; align-items:center; justify-content:space-between">
-      <span class="mono" style="color:var(--muted)">Experience →</span>
+<!-- <section aria-label="experience">
+  <div class="trust-strip">
+    <div style="display:flex; gap:32px; flex-wrap:wrap; align-items:center; justify-content:center">
+      <span class="mono" style="color:var(--muted); font-weight: 600;">Experience →</span>
       <span class="badge">Enterprise Security</span>
       <span class="badge">Multi-Cloud Platforms</span>
       <span class="badge">Security Leadership</span>
       <span class="badge">DevSecOps Automation</span>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- CORE COMPETENCIES -->
 <section>
   <h2>Core Competencies</h2>
-  <div class="grid cols-2">
-    <article class="card">
-      <div class="inner">
-        <h3>Platform & Architecture</h3>
-        <p class="muted">Tenant-aware boundaries, per-tenant key control (BYOK), secure-by-default libraries, and threat-model driven designs for multi-cloud systems.</p>
-      </div>
-    </article>
-    <article class="card">
-      <div class="inner">
-        <h3>DevSecOps & Automation</h3>
-        <p class="muted">CI/CD enforcement (SAST/SCA/IaC checks), automated triage flows, guardrails that scale, and measurable drift/adoption metrics.</p>
-      </div>
-    </article>
-    <article class="card">
-      <div class="inner">
-        <h3>Runtime & Observability</h3>
-        <p class="muted">eBPF-based runtime telemetry, service-level runtime detection, and telemetry fusion into SIEM/analytics for rapid investigation.</p>
-      </div>
-    </article>
-    <article class="card">
-      <div class="inner">
-        <h3>Data & Privacy Controls</h3>
-        <p class="muted">Envelope encryption, verifiable deletion/crypto-shredding workflows, tokenization, and lifecycle controls for sensitive data at scale.</p>
-      </div>
-    </article>
+  <div class="competency-list">
+    <div class="competency-item">
+      <h3>Design & Threat Modeling</h3>
+      <p>Map data flows early, call out material risks, choose controls that match the feature. Encode decisions in CI/CD (required checks, signatures, policies) so "approved" == "passing."</p>
+    </div>
+
+    <div class="competency-item">
+      <h3>Code Security</h3>
+      <p>Keep secrets out of source; run Gitleaks/secret rotation, SAST where it pays off, SCA with license policy; container image scanning; protect against dependency confusion/typosquatting via scoped registries, verified publishers, and pinning.</p>
+    </div>
+
+    <div class="competency-item">
+      <h3>Delivery & Supply Chain</h3>
+      <p>Reproducible builds, artifact signing/attestations, minimal images, SBOMs, and policy gates on merge and deploy. Clear, repeatable promotion between environments.</p>
+    </div>
+
+    <div class="competency-item">
+      <h3>IaC & Cloud Posture</h3>
+      <p>Terraform/Helm as truth, policy-as-code guardrails, drift detection, and CNAPP coverage that turns findings into issues—not dashboards.</p>
+    </div>
+
+    <div class="competency-item">
+      <h3>Distributed Systems</h3>
+      <p>Service identity and scoped communication (mTLS/mesh), network segmentation, timeouts/backpressure, idempotency, multi-tenant defaults, and observability that traces calls across the platform.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section>
+  <h2>Tech Stack</h2>
+  <div class="tech-grid">
+    <div class="tech-category">
+      <h3>Languages</h3>
+      <p>C++, Python, Go, Node.js</p>
+    </div>
+    <div class="tech-category">
+      <h3>Cloud</h3>
+      <p>AWS, Azure, GCP</p>
+    </div>
+    <div class="tech-category">
+      <h3>Orchestration</h3>
+      <p>Containers & Kubernetes (EKS/AKS/GKE)</p>
+    </div>
+    <div class="tech-category">
+      <h3>Pipelines & IaC</h3>
+      <p>GitHub Actions, GitLab CI, Terraform, Helm, Ansible</p>
+    </div>
+    <div class="tech-category">
+      <h3>Data & Messaging</h3>
+      <p>PostgreSQL, Redis, MongoDB, Kafka</p>
+    </div>
+    <div class="tech-category">
+      <h3>Observability</h3>
+      <p>Prometheus, Grafana, OpenTelemetry</p>
+    </div>
+    <div class="tech-category">
+      <h3>Security (practical)</h3>
+      <p>Secrets management, image signing & SBOMs, policy-as-code in CI, least-privilege by default</p>
+    </div>
+    <div class="tech-category">
+      <h3>Systems</h3>
+      <p>Linux, eBPF, debugging in prod</p>
+    </div>
+    <div class="tech-category">
+      <h3>MLOps</h3>
+      <p>Python, PyTorch, LLMs, Math</p>
+    </div>
   </div>
 </section>
 
 <!-- SELECTED WORK -->
 <section id="work">
-  <h2>Selected impact & projects</h2>
+  <h2>Technical work</h2>
   <div class="grid cols-3">
     <article class="card">
       <div class="inner">
@@ -236,7 +259,7 @@ permalink: /
   <h2>Portfolio & showcase</h2>
   <div class="card">
     <div class="inner">
-      <p class="muted">Explore my detailed portfolio showcasing architecture diagrams, technical deep-dives, and case studies from enterprise security implementations.</p>
+      <p class="muted">Architecture diagrams, implementation details, and technical case studies from distributed systems security work.</p>
       <div style="margin-top:16px">
         <a class="btn primary" href="/portfolio/">Explore Portfolio</a>
       </div>
@@ -281,7 +304,7 @@ permalink: /
   <h2>Books & continuous learning</h2>
   <div class="card">
     <div class="inner">
-      <p class="muted">A curated collection of technical books, security research papers, and learning resources that shape my approach to platform security and systems design.</p>
+      <p class="muted">Technical references, security research papers, and systems design resources. Focus on distributed systems, security architecture, and platform engineering.</p>
       <div style="margin-top:16px">
         <a class="btn" href="/books/">Browse Library</a>
       </div>
@@ -294,8 +317,8 @@ permalink: /
   <h2>Get in touch</h2>
   <div class="card">
     <div class="inner">
-      <p class="muted">Email <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a> or connect on <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>. I respond within 24–48 hours.</p>
-      <p class="muted" style="margin-top:12px"><strong>Open to:</strong> Senior platform/infrastructure security roles, security architecture positions, and consulting opportunities.</p>
+      <p class="muted">Email <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a> or connect on <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a> for technical discussions.</p>
+      <p class="muted" style="margin-top:12px">Interested in platform security, infrastructure architecture, and distributed systems security roles.</p>
       <div style="margin-top:16px">
         <a class="btn primary" href="mailto:{{ site.author.email }}">Send Email</a>
         <a class="btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>
