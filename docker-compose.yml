@@ -2,13 +2,18 @@ version: '3.8'
 
 services:
   jekyll-site:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "4000:4000"
     volumes:
       - .:/usr/src/app
-      - /usr/src/app/vendor
-      - /usr/src/app/.bundle
+      - bundle:/usr/src/app/vendor/bundle
     environment:
       - JEKYLL_ENV=development
-    command: bundle exec jekyll serve -H 0.0.0.0 -w --livereload
+      - BUNDLE_PATH=/usr/src/app/vendor/bundle
+    command: sh -c "bundle install && bundle exec jekyll serve -H 0.0.0.0 -w"
+
+volumes:
+  bundle:
