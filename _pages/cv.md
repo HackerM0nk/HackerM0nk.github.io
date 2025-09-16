@@ -34,7 +34,7 @@ permalink: /cv/
 <div class="cv-section">
   <div class="education-item">
     <div class="education-header">
-      <h3>Indian Institute of Information Technology, Allahabad</h3>
+      <h3>Indian Institute of Information Technology (IIIT) Allahabad</h3>
       <div class="education-period">Aug 2018 – May 2022</div>
     </div>
     <div class="education-details">

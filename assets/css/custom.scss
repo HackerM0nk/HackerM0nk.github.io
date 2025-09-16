@@ -1,6 +1,10 @@
 ---
 ---
 
+/* Cache Buster v2.1 - Force Update */
+
+/* Profile image updated to use correct path */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
 
 :root {
@@ -89,37 +93,50 @@ header {
   position: sticky !important;
   top: 0 !important;
   z-index: 20 !important;
-  backdrop-filter: blur(6px) !important;
-  background: rgba(250,251,252,.85) !important;
+  backdrop-filter: blur(12px) !important;
+  background: rgba(250,251,252,.95) !important;
   border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08) !important;
 }
 
 .nav {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  padding: 14px 0 !important;
+  padding: 24px 0 !important;
+  min-height: 80px !important;
 }
 
 .nav .brand {
   display: flex !important;
-  gap: 12px !important;
+  gap: 16px !important;
   align-items: center !important;
+  padding: 8px 0 !important;
 }
 
 .logo {
-  width: 34px !important;
-  height: 34px !important;
+  width: 56px !important;
+  height: 56px !important;
   border-radius: 50% !important;
-  background: linear-gradient(135deg, var(--brand), var(--brand-2)) !important;
-  box-shadow: 0 0 0 3px rgba(255,255,255,.06) !important;
+  background-image: url('/assets/images/profile.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  box-shadow: 0 6px 20px rgba(49,130,206,.25), 0 0 0 3px rgba(255,255,255,.9) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 3px solid var(--bg) !important;
+}
+
+.logo:hover {
+  transform: scale(1.08) !important;
+  box-shadow: 0 12px 32px rgba(49,130,206,.35), 0 0 0 4px rgba(255,255,255,.95) !important;
 }
 
 .brand .title {
   font-weight: 700 !important;
-  letter-spacing: 0.3px !important;
+  letter-spacing: 0.2px !important;
   color: var(--ink) !important;
-  font-size: 16px !important;
+  font-size: 18px !important;
   text-decoration: none !important;
   transition: color 0.2s ease !important;
 }
@@ -130,8 +147,120 @@ header {
 
 .links {
   display: flex !important;
-  gap: 16px !important;
+  gap: 20px !important;
   align-items: center !important;
+}
+
+header .nav .links .btn {
+  padding: 12px 18px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  border-radius: 10px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.8), rgba(255,255,255,.4)) !important;
+  border: 1px solid rgba(49,130,206,.15) !important;
+  backdrop-filter: blur(12px) !important;
+  color: var(--ink) !important;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05) !important;
+}
+
+header .nav .links .btn:hover {
+  background: linear-gradient(135deg, rgba(49,130,206,.12), rgba(128,90,213,.1)) !important;
+  border: 1px solid rgba(49,130,206,.25) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(49,130,206,.2) !important;
+  color: var(--brand) !important;
+}
+
+/* Special styling for social icons */
+header .nav .links .btn svg {
+  transition: all 0.3s ease !important;
+}
+
+header .nav .links .btn:hover svg {
+  transform: scale(1.1) !important;
+  color: var(--brand) !important;
+}
+
+/* Social media icon buttons - special styling */
+header .nav .links .btn[href*="linkedin.com"] {
+  background: linear-gradient(135deg, rgba(0,119,181,.12), rgba(0,119,181,.06)) !important;
+  border: 1px solid rgba(0,119,181,.2) !important;
+}
+
+header .nav .links .btn[href*="linkedin.com"]:hover {
+  background: linear-gradient(135deg, rgba(0,119,181,.18), rgba(0,119,181,.12)) !important;
+  border: 1px solid rgba(0,119,181,.3) !important;
+  box-shadow: 0 8px 20px rgba(0,119,181,.2) !important;
+}
+
+header .nav .links .btn[href*="linkedin.com"]:hover svg {
+  color: #0077b5 !important;
+}
+
+header .nav .links .btn[href*="github.com"] {
+  background: linear-gradient(135deg, rgba(33,41,60,.12), rgba(33,41,60,.06)) !important;
+  border: 1px solid rgba(33,41,60,.2) !important;
+}
+
+header .nav .links .btn[href*="github.com"]:hover {
+  background: linear-gradient(135deg, rgba(33,41,60,.18), rgba(33,41,60,.12)) !important;
+  border: 1px solid rgba(33,41,60,.3) !important;
+  box-shadow: 0 8px 20px rgba(33,41,60,.2) !important;
+}
+
+header .nav .links .btn[href*="github.com"]:hover svg {
+  color: #21293c !important;
+}
+
+/* FORCE OVERRIDE - Super Specific Selectors */
+body header.header .wrap.nav .links a.btn,
+body header .nav .links a.btn,
+header.header .nav .links a.btn,
+.wrap.nav .links a.btn {
+  padding: 12px 18px !important;
+  margin: 2px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,255,255,.6)) !important;
+  border: 1px solid rgba(49,130,206,.2) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1) !important;
+  backdrop-filter: blur(12px) !important;
+  transition: all 0.3s ease !important;
+  color: var(--ink) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body header.header .wrap.nav .links a.btn:hover,
+body header .nav .links a.btn:hover,
+header.header .nav .links a.btn:hover,
+.wrap.nav .links a.btn:hover {
+  transform: translateY(-3px) !important;
+  background: linear-gradient(135deg, rgba(49,130,206,.15), rgba(128,90,213,.1)) !important;
+  border: 1px solid rgba(49,130,206,.3) !important;
+  box-shadow: 0 8px 24px rgba(49,130,206,.25) !important;
+  color: var(--brand) !important;
+}
+
+/* FORCE LOGO OVERRIDE */
+body header .nav .brand .logo,
+header .wrap .brand .logo,
+.nav .brand .logo {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  background-image: url('/assets/images/profile.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  box-shadow: 0 8px 24px rgba(49,130,206,.3), 0 0 0 4px rgba(255,255,255,.95) !important;
+  border: 3px solid var(--bg) !important;
+  transition: all 0.3s ease !important;
 }
 
 /* Modern Buttons */

@@ -1,30 +1,23 @@
-# Base image: Ruby with necessary dependencies for Jekyll
-FROM ruby:3.2
+# Use a slim Ruby Alpine image
+FROM ruby:3.2-alpine
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    nodejs \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache build-base nodejs npm git
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /usr/src/app
 
-# Copy Gemfile for dependency installation
+# Copy Gemfile early for caching
 COPY Gemfile ./
 
-# Install bundler and clear any existing bundle config
-RUN gem install bundler:2.4.19 && \
-    bundle config --delete path && \
-    bundle config --delete without && \
-    bundle install --retry 3
+# Install bundler and dependencies
+RUN gem install bundler && bundle install
 
-# Copy the entire site into the container
+# Copy the rest of your Jekyll site
 COPY . .
 
-# Expose port 4000 for Jekyll server
+# Expose default Jekyll port
 EXPOSE 4000
 
-# Command to serve the Jekyll site
+# Default command for development server
 CMD ["bundle", "exec", "jekyll", "serve", "-H", "0.0.0.0", "-w"]
-
