@@ -23,7 +23,7 @@ permalink: /
   <h2>What I Do</h2>
   <div class="executive-summary">
     <p style="font-size: 1.1rem; line-height: 1.7; color: var(--sub); margin: 0;">I'm a software security engineer who builds security into how cloud-native systems are designed, built, shipped, and run. My bias: security should feel like part of engineering—not a separate lane. I treat application code and IaC as the source of truth, set sane defaults, and measure the few signals that actually show whether we're safe and compliant.</p>
-    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--sub); margin: 16px 0 0;">I design systems that are secure by default—where good security practices are built into the platform itself. Think secure constructs and invariants that developers can't easily break, even when they're moving fast. When something does go wrong, you know about it immediately and can fix it quickly.</p>
+    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--sub); margin: 16px 0 0;">I design systems that are secure by default—where good security practices are built into the platform itself. Think secure constructs and invariants that developers can't easily break, even when they're shipping fast.</p>
   </div>
 </section>
 
