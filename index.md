@@ -9,7 +9,7 @@ permalink: /
   <div class="hero-intro">
     <span class="greeting">HELLO 👋</span>
     <h1 class="h1">I'm a Software Security Engineer focused on securing <em>Platforms</em> and <em> Products</em></h1>
-    <p class="lead">Security isn't a side quest—it's part of how we build. I lean on code and IaC as the ground truth, use sensible defaults, and track a few meaningful signals. The aim: make the right thing easy and drift impossible to miss.</p>
+    <p class="lead">Security isn't a side quest—it's part of how we build. I lean on code and IaC as the ground truth, use sensible defaults, and track a few meaningful metrics. The aim is to make the right things easy and drifts impossible to miss.</p>
     <div class="cta">
       <a class="btn" href="/about/">About</a>
       <a class="btn" href="#work">Technical work</a>
