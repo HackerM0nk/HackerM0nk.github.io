@@ -22,7 +22,8 @@ permalink: /
 <section>
   <h2>What I Do</h2>
   <div class="executive-summary">
-    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--sub); margin: 0;">I'm a software security engineer who builds security into how cloud-native systems are designed, built, shipped, and run. My bias: security should feel like part of engineering—not a separate lane. I treat application code and IaC as the source of truth, set sane defaults, and measure the few signals that actually show whether we're safe and compliant. The goal is simple: make the secure path the easy path, and make drift obvious.</p>
+    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--sub); margin: 0;">I'm a software security engineer who builds security into how cloud-native systems are designed, built, shipped, and run. My bias: security should feel like part of engineering—not a separate lane. I treat application code and IaC as the source of truth, set sane defaults, and measure the few signals that actually show whether we're safe and compliant.</p>
+    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--sub); margin: 16px 0 0;">I focus on security architecture for distributed systems, with emphasis on design patterns that scale with engineering velocity. The goal is simple: make the secure path the easy path, make security failures observable and correctable, and make drift impossible to miss.</p>
   </div>
 </section>
 
@@ -70,13 +71,6 @@ permalink: /
   </div>
 </section>
 
-<!-- EXECUTIVE SUMMARY -->
-<section>
-  <h2>What I Do</h2>
-  <div class="executive-summary">
-    <p style="font-size: 1.2rem; line-height: 1.7; color: var(--sub); margin: 0; text-align: center;">Security architecture for distributed systems, with emphasis on design patterns that scale with engineering velocity. Focus on measurable controls, infrastructure as code, and operational practices that make security failures observable and correctable.</p>
-  </div>
-</section>
 
 <!-- TRUST STRIP -->
 <!-- <section aria-label="experience">
